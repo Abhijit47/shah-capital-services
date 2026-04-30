@@ -1,5 +1,11 @@
 import { TanStackDevtools } from '@tanstack/react-devtools'
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import {
+  ErrorComponent,
+  HeadContent,
+  Scripts,
+  createRootRoute,
+  type ErrorComponentProps,
+} from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 
 import globalCss from '../global.css?url'
@@ -49,8 +55,17 @@ export const Route = createRootRoute({
   }),
   shellComponent: RootDocument,
   notFoundComponent: NotFound,
-  errorComponent: () => <div>Something went wrong...</div>,
+  errorComponent: RootErrorComponent,
 })
+
+function RootErrorComponent({ error, reset }: ErrorComponentProps) {
+  return (
+    <>
+      <ErrorComponent error={error} />
+      <button onClick={() => reset()}>Try Again</button>
+    </>
+  )
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (

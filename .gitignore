@@ -13,3 +13,5 @@ __unconfig*
 todos.json
 
 /docs
+# Local Netlify folder
+.netlify

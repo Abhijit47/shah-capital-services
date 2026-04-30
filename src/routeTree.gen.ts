@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SinglePageHomeTwoRouteImport } from './routes/single-page-home-two'
 import { Route as SinglePageHomeThreeRouteImport } from './routes/single-page-home-three'
 import { Route as SinglePageHomeOneRouteImport } from './routes/single-page-home-one'
+import { Route as HelloRouteImport } from './routes/hello'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -57,6 +58,11 @@ const SinglePageHomeThreeRoute = SinglePageHomeThreeRouteImport.update({
 const SinglePageHomeOneRoute = SinglePageHomeOneRouteImport.update({
   id: '/single-page-home-one',
   path: '/single-page-home-one',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelloRoute = HelloRouteImport.update({
+  id: '/hello',
+  path: '/hello',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -225,6 +231,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/hello': typeof HelloRoute
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
@@ -261,6 +268,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/hello': typeof HelloRoute
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
@@ -298,6 +306,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/hello': typeof HelloRoute
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
@@ -336,6 +345,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/hello'
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
@@ -372,6 +382,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/hello'
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
@@ -408,6 +419,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/hello'
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
@@ -445,6 +457,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  HelloRoute: typeof HelloRoute
   SinglePageHomeOneRoute: typeof SinglePageHomeOneRoute
   SinglePageHomeThreeRoute: typeof SinglePageHomeThreeRoute
   SinglePageHomeTwoRoute: typeof SinglePageHomeTwoRoute
@@ -499,6 +512,13 @@ declare module '@tanstack/react-router' {
       path: '/single-page-home-one'
       fullPath: '/single-page-home-one'
       preLoaderRoute: typeof SinglePageHomeOneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hello': {
+      id: '/hello'
+      path: '/hello'
+      fullPath: '/hello'
+      preLoaderRoute: typeof HelloRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -725,6 +745,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  HelloRoute: HelloRoute,
   SinglePageHomeOneRoute: SinglePageHomeOneRoute,
   SinglePageHomeThreeRoute: SinglePageHomeThreeRoute,
   SinglePageHomeTwoRoute: SinglePageHomeTwoRoute,
