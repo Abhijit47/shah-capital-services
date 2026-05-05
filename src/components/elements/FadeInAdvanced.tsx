@@ -1,9 +1,7 @@
-'use client'
-
 import type { Transition } from 'motion/react'
 import { motion } from 'motion/react'
 import type { ReactNode } from 'react'
-import { memo } from 'react'
+// import { memo } from 'react'
 
 type AnimationVariant =
   | 'fadeIn'
@@ -169,5 +167,7 @@ function FadeInAdvanced({
   )
 }
 
-export default memo(FadeInAdvanced)
+// export default memo(FadeInAdvanced)
+export default FadeInAdvanced
+
 export type { AnimationVariant, FadeInAdvancedProps }

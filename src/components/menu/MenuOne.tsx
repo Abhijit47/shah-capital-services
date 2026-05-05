@@ -1,23 +1,22 @@
 import { Link, useLocation } from '@tanstack/react-router'
-import useFixproContext from '../context/useFixproContext'
+// import useFixproContext from '../context/useFixproContext'
 import MenuList from './MenuList'
 import SinglePageManuList from './SinglePageManuList'
-import logo from '/assets/images/resources/logo-1.png'
 
 const MenuOne: React.FC = () => {
-  const { setIsSearch, setIsSidebar, setIsMobileManu, cartCount } =
-    useFixproContext()
+  // const { setIsSearch, setIsSidebar, setIsMobileManu, cartCount } =
+  //   useFixproContext()
   const { pathname } = useLocation()
   const isOnePage = pathname.includes('single-page')
 
-  const handleSearch = () => {
-    setIsSearch((pre) => !pre)
-  }
+  // const handleSearch = () => {
+  //   setIsSearch((pre) => !pre)
+  // }
   const handlSidebar = () => {
-    setIsSidebar((pre) => !pre)
+    // setIsSidebar((pre) => !pre)
   }
   const handlMobileMenu = () => {
-    setIsMobileManu((pre) => !pre)
+    // setIsMobileManu((pre) => !pre)
   }
   return (
     <div className="main-menu__wrapper">
@@ -25,7 +24,12 @@ const MenuOne: React.FC = () => {
         <div className="main-menu__left">
           <div className="main-menu__logo">
             <Link to="/">
-              <img src={logo} width={138} height={40} alt="Logo" />
+              <img
+                src={'/logo-light.jpeg'}
+                width={'100%'}
+                height={40}
+                alt="Logo"
+              />
             </Link>
           </div>
         </div>
@@ -53,19 +57,19 @@ const MenuOne: React.FC = () => {
             </div>
           </div>
           <div className="main-menu__search-cart-box">
-            <div className="main-menu__search-box" onClick={handleSearch}>
+            {/* <div className="main-menu__search-box" onClick={handleSearch}>
               <a
                 href="#"
                 className="main-menu__search searcher-toggler-box icon-search-interface-symbol"
                 title="main menu"
               ></a>
-            </div>
-            <div className="main-menu__cart-box">
-              <a href="/cart" className="main-menu__cart">
+            </div> */}
+            {/* <div className="main-menu__cart-box">
+              <Link to="/cart" className="main-menu__cart">
                 <span className="far fa-shopping-cart"></span>
                 <span className="main-menu__cart-count">0{cartCount}</span>
-              </a>
-            </div>
+              </Link>
+            </div> */}
           </div>
           <div className="main-menu__nav-sidebar-icon" onClick={handlSidebar}>
             <a className="navSidebar-button" href="#" title="navSidebar">

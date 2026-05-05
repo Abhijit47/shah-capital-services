@@ -15,63 +15,58 @@ const counterItems: CounterItem[] = [
   {
     id: 1,
     iconClass: 'icon-project-complete',
-    count: 1.25,
-    suffix: 'K',
-    label: 'Successful Projects',
+    count: 20,
+    suffix: '+',
+    label: 'years in wealth',
   },
   {
     id: 2,
     iconClass: 'icon-technician-1',
-    count: 500,
+    count: 1000,
     suffix: '+',
-    label: 'Experts Staffs',
+    label: 'active investors',
   },
   {
     id: 3,
     iconClass: 'icon-happy-customer',
-    count: 1.33,
-    suffix: 'K',
-    label: 'Happy customer',
-  },
-  {
-    id: 4,
-    iconClass: 'icon-project-complete',
-    count: 100,
-    suffix: '%',
-    label: 'Quality Products',
+    count: 400,
+    suffix: '+',
+    label: 'families services',
   },
 ]
 
 const CounterOne: React.FC = () => {
   return (
-    <JarallaxSection
-      className="counter-one"
-      imgSrc={counterOneBg}
-      overlayOpacity={0.8}
-    >
-      <div className="container">
-        <ul className="row list-unstyled">
-          {counterItems.map((item) => (
-            <li key={item.id} className="col-xl-3 col-lg-6 col-md-6">
-              <div className="counter-one__single">
-                <div className="counter-one__icon">
-                  <span className={item.iconClass}></span>
+    <div className={'feature-one pb-0'}>
+      <JarallaxSection
+        className="counter-one process-two"
+        imgSrc={counterOneBg}
+        overlayOpacity={0.8}
+      >
+        <div className="container mx-auto">
+          <ul className="row list-unstyled">
+            {counterItems.map((item) => (
+              <li key={item.id} className="col-xl-4 col-lg-6 col-md-6">
+                <div className="counter-one__single">
+                  <div className="counter-one__icon">
+                    <span className={item.iconClass}></span>
+                  </div>
+                  <div className="counter-one__count-box">
+                    <h3 className="odometer">
+                      <ClientOnly fallback={null}>
+                        <CounterUp ending={item.count} />
+                      </ClientOnly>
+                    </h3>
+                    <span>{item.suffix}</span>
+                  </div>
+                  <p className="counter-one__count-text">{item.label}</p>
                 </div>
-                <div className="counter-one__count-box">
-                  <h3 className="odometer">
-                    <ClientOnly fallback={null}>
-                      <CounterUp ending={item.count} />
-                    </ClientOnly>
-                  </h3>
-                  <span>{item.suffix}</span>
-                </div>
-                <p className="counter-one__count-text">{item.label}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </JarallaxSection>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </JarallaxSection>
+    </div>
   )
 }
 

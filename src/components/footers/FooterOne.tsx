@@ -1,4 +1,5 @@
 import { Link } from '@tanstack/react-router'
+
 import FadeInAdvanced from '../elements/FadeInAdvanced'
 import footerLogo from '/assets/images/resources/footer-logo.png'
 import footerShape1 from '/assets/images/shapes/footer-widget-shape-1.png'
@@ -87,7 +88,7 @@ const bottomMenuLinks: NavLink[] = [
 ]
 
 const FooterOne: React.FC = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     // Handle form submission logic here

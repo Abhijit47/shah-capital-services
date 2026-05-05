@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SinglePageHomeTwoRouteImport } from './routes/single-page-home-two'
 import { Route as SinglePageHomeThreeRouteImport } from './routes/single-page-home-three'
 import { Route as SinglePageHomeOneRouteImport } from './routes/single-page-home-one'
+import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
 import { Route as HelloRouteImport } from './routes/hello'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
@@ -58,6 +59,11 @@ const SinglePageHomeThreeRoute = SinglePageHomeThreeRouteImport.update({
 const SinglePageHomeOneRoute = SinglePageHomeOneRouteImport.update({
   id: '/single-page-home-one',
   path: '/single-page-home-one',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
+  id: '/knowledge-hub',
+  path: '/knowledge-hub',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HelloRoute = HelloRouteImport.update({
@@ -232,6 +238,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/hello': typeof HelloRoute
+  '/knowledge-hub': typeof KnowledgeHubRoute
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
@@ -269,6 +276,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/hello': typeof HelloRoute
+  '/knowledge-hub': typeof KnowledgeHubRoute
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
@@ -307,6 +315,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/hello': typeof HelloRoute
+  '/knowledge-hub': typeof KnowledgeHubRoute
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
@@ -346,6 +355,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/hello'
+    | '/knowledge-hub'
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
@@ -383,6 +393,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/hello'
+    | '/knowledge-hub'
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
@@ -420,6 +431,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/hello'
+    | '/knowledge-hub'
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
@@ -458,6 +470,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   HelloRoute: typeof HelloRoute
+  KnowledgeHubRoute: typeof KnowledgeHubRoute
   SinglePageHomeOneRoute: typeof SinglePageHomeOneRoute
   SinglePageHomeThreeRoute: typeof SinglePageHomeThreeRoute
   SinglePageHomeTwoRoute: typeof SinglePageHomeTwoRoute
@@ -512,6 +525,13 @@ declare module '@tanstack/react-router' {
       path: '/single-page-home-one'
       fullPath: '/single-page-home-one'
       preLoaderRoute: typeof SinglePageHomeOneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/knowledge-hub': {
+      id: '/knowledge-hub'
+      path: '/knowledge-hub'
+      fullPath: '/knowledge-hub'
+      preLoaderRoute: typeof KnowledgeHubRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hello': {
@@ -746,6 +766,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   HelloRoute: HelloRoute,
+  KnowledgeHubRoute: KnowledgeHubRoute,
   SinglePageHomeOneRoute: SinglePageHomeOneRoute,
   SinglePageHomeThreeRoute: SinglePageHomeThreeRoute,
   SinglePageHomeTwoRoute: SinglePageHomeTwoRoute,

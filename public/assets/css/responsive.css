@@ -2190,8 +2190,10 @@
   }
 
   .main-slider .item {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    /* padding-top: 100px;
+    padding-bottom: 100px; */
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .main-slider-two__shape-1,

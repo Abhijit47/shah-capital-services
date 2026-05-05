@@ -1,28 +1,27 @@
-import AboutOne from '#/features/home-one/AboutOne'
-import BlogOne from '#/features/home-one/BlogOne'
-import BrandOne from '#/features/home-one/BrandOne'
+import HowWeWork from '#/components/HowWeWork.tsx'
+// import AboutOne from '#/features/home-one/AboutOne'
+// import BlogOne from '#/features/home-one/BlogOne'
+// import BrandOne from '#/features/home-one/BrandOne'
 import CounterOne from '#/features/home-one/CounterOne'
-import FeatureOne from '#/features/home-one/FeatureOne'
+// import FeatureOne from '#/features/home-one/FeatureOne'
 import MainSlider from '#/features/home-one/MainSlider'
-import PricingOne from '#/features/home-one/PricingOne'
-import ProjectOne from '#/features/home-one/ProjectOne'
-import ServiceOne from '#/features/home-one/ServiceOne'
-import TeamOne from '#/features/home-one/TeamOne'
+// import ServiceOne from '#/features/home-one/ServiceOne'
 import TestimonialOne from '#/features/home-one/TestimonialOne'
-import VideoOne from '#/features/home-one/VideoOne'
-import WhyChooseOne from '#/features/home-one/WhyChooceOne'
+// import VideoOne from '#/features/home-one/VideoOne'
+// import WhyChooseOne from '#/features/home-one/WhyChooceOne'
+// import TestimonialsThree from '#/features/home-three/TestimonialsThree.tsx'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
   head: () => ({
     meta: [
       {
-        title: 'Fixpro - Electronics & Gadgets Repair Services NextJs Template',
+        title: 'Home | Shah Capital Services',
       },
       {
         name: 'description',
         content:
-          'Fixpro – Modern Next Js template for gadgets, mobile, AC & computer repair services. Clean, responsive & fully documented',
+          'Your Trusted Partner in Financial Growth and Wealth Management',
       },
     ],
   }),
@@ -34,18 +33,20 @@ function App() {
     <main>
       <div className="page-wrapper">
         <MainSlider />
-        <FeatureOne />
-        <AboutOne />
-        <ServiceOne />
-        <WhyChooseOne />
         <CounterOne />
-        <ProjectOne />
-        <VideoOne />
-        <TeamOne />
-        <BrandOne />
-        <PricingOne />
+        <HowWeWork />
         <TestimonialOne />
-        <BlogOne />
+        {/* <TestimonialsThree /> */}
+        {/* <FeatureOne /> */}
+        {/* <AboutOne /> */}
+        {/* <ServiceOne /> */}
+        {/* <WhyChooseOne /> */}
+        {/* <ProjectOne /> */}
+        {/* <VideoOne /> */}
+        {/* <TeamOne /> */}
+        {/* <BrandOne /> */}
+        {/* <PricingOne /> */}
+        {/* <BlogOne /> */}
       </div>
     </main>
   )

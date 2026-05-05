@@ -15,6 +15,7 @@
     "check": "prettier --check ."
   },
   "dependencies": {
+    "@fontsource/geist-mono": "^5.2.7",
     "@ramonak/react-progress-bar": "^5.4.0",
     "@tanstack/react-devtools": "latest",
     "@tanstack/react-form": "latest",

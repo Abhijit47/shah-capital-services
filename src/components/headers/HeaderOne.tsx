@@ -1,9 +1,9 @@
-import { ClientOnly } from '@tanstack/react-router'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import MenuOne from '../menu/MenuOne'
 
 function HeaderOne() {
   const [isStick, setIsSticky] = useState<boolean>(false)
+  const headerRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,15 +13,33 @@ function HeaderOne() {
         setIsSticky(false)
       }
     }
+
+    const ob = new IntersectionObserver(
+      (observer) => {
+        console.log({ observer })
+      },
+      {
+        root: headerRef.current,
+        rootMargin: '200px',
+        scrollMargin: '10px',
+        threshold: 0.5,
+      },
+    )
+
+    if (headerRef.current) {
+      ob.observe(headerRef.current)
+    }
+
     window.addEventListener('scroll', handleScroll)
     return () => {
       window.removeEventListener('scroll', handleScroll)
+      ob.unobserve(headerRef.current!)
     }
   }, [setIsSticky])
 
   return (
     <>
-      <header className="main-header">
+      <header className="main-header" ref={headerRef}>
         <div className="main-menu__top">
           <div className="main-menu__top-inner">
             <ul className="list-unstyled main-menu__contact-list">
@@ -82,18 +100,18 @@ function HeaderOne() {
           </div>
         </div>
         <nav className="main-menu">
-          <ClientOnly fallback={null}>
-            <MenuOne />
-          </ClientOnly>
+          {/* <ClientOnly fallback={null}> */}
+          <MenuOne />
+          {/* </ClientOnly> */}
         </nav>
       </header>
       <div
         className={`stricky-header stricked-menu main-menu ${isStick ? 'stricky-fixed' : ''}`}
       >
         <div className="sticky-header__content">
-          <ClientOnly fallback={null}>
-            <MenuOne />
-          </ClientOnly>
+          {/* <ClientOnly fallback={null}> */}
+          <MenuOne />
+          {/* </ClientOnly> */}
         </div>
       </div>
     </>

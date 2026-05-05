@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 type Props = {
   enabled?: boolean
@@ -80,11 +80,12 @@ const CustomCursor: React.FC<Props> = ({
   }, [enabled, ignoreReducedMotion])
 
   return (
-    <>
+    <div className="custom-cursor" style={{ position: 'relative' }}>
       <div ref={cursorRef} className="custom-cursor__cursor"></div>
       <div ref={innerRef} className="custom-cursor__cursor-two"></div>
-    </>
+    </div>
   )
 }
 
-export default React.memo(CustomCursor)
+// export default memo(CustomCursor)
+export default CustomCursor
