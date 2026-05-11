@@ -139,9 +139,21 @@ const Contact: React.FC = () => {
             <div className="row">
               <div className="col-xl-6">
                 <div className="contact-page__left">
-                  <iframe
+                  {/* <iframe
                     title="our location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
+                    className="google-map__one"
+                  ></iframe> */}
+
+                  <iframe
+                    title="our location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248431.88669008325!2d80.04386040633084!3d13.047807811525526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e1!3m2!1sen!2sin!4v1778254864755!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
                     className="google-map__one"
                   ></iframe>
                 </div>

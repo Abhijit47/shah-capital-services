@@ -12,17 +12,24 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SinglePageHomeTwoRouteImport } from './routes/single-page-home-two'
 import { Route as SinglePageHomeThreeRouteImport } from './routes/single-page-home-three'
 import { Route as SinglePageHomeOneRouteImport } from './routes/single-page-home-one'
+import { Route as SidSaiKimRouteImport } from './routes/sid-sai-kim'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
 import { Route as HelloRouteImport } from './routes/hello'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CommissionDisclosureRouteImport } from './routes/commission-disclosure'
+import { Route as CodeOfConductRouteImport } from './routes/code-of-conduct'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as BlogsIndexRouteImport } from './routes/blogs/index'
+import { Route as ServicesSlugRouteImport } from './routes/services/$slug'
 import { Route as BlogsBlogStandardRouteImport } from './routes/blogs/blog-standard'
 import { Route as BlogsBlogRightSidebarRouteImport } from './routes/blogs/blog-right-sidebar'
 import { Route as BlogsBlogLeftSidebarRouteImport } from './routes/blogs/blog-left-sidebar'
 import { Route as BlogsBlogDetailsRouteImport } from './routes/blogs/blog-details'
+import { Route as BlogsSlugRouteImport } from './routes/blogs/$slug'
 import { Route as shopWishlistRouteImport } from './routes/(shop)/wishlist'
 import { Route as shopProductsRouteImport } from './routes/(shop)/products'
 import { Route as shopProductDetailsRouteImport } from './routes/(shop)/product-details'
@@ -61,6 +68,16 @@ const SinglePageHomeOneRoute = SinglePageHomeOneRouteImport.update({
   path: '/single-page-home-one',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SidSaiKimRoute = SidSaiKimRouteImport.update({
+  id: '/sid-sai-kim',
+  path: '/sid-sai-kim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
   id: '/knowledge-hub',
   path: '/knowledge-hub',
@@ -71,9 +88,24 @@ const HelloRoute = HelloRouteImport.update({
   path: '/hello',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommissionDisclosureRoute = CommissionDisclosureRouteImport.update({
+  id: '/commission-disclosure',
+  path: '/commission-disclosure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CodeOfConductRoute = CodeOfConductRouteImport.update({
+  id: '/code-of-conduct',
+  path: '/code-of-conduct',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -96,6 +128,11 @@ const BlogsIndexRoute = BlogsIndexRouteImport.update({
   path: '/blogs/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogsBlogStandardRoute = BlogsBlogStandardRouteImport.update({
   id: '/blogs/blog-standard',
   path: '/blogs/blog-standard',
@@ -114,6 +151,11 @@ const BlogsBlogLeftSidebarRoute = BlogsBlogLeftSidebarRouteImport.update({
 const BlogsBlogDetailsRoute = BlogsBlogDetailsRouteImport.update({
   id: '/blogs/blog-details',
   path: '/blogs/blog-details',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsSlugRoute = BlogsSlugRouteImport.update({
+  id: '/blogs/$slug',
+  path: '/blogs/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const shopWishlistRoute = shopWishlistRouteImport.update({
@@ -236,9 +278,14 @@ const DemoFormAddressRoute = DemoFormAddressRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/code-of-conduct': typeof CodeOfConductRoute
+  '/commission-disclosure': typeof CommissionDisclosureRoute
   '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/hello': typeof HelloRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/sid-sai-kim': typeof SidSaiKimRoute
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
@@ -256,10 +303,12 @@ export interface FileRoutesByFullPath {
   '/product-details': typeof shopProductDetailsRoute
   '/products': typeof shopProductsRoute
   '/wishlist': typeof shopWishlistRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
   '/blogs/blog-details': typeof BlogsBlogDetailsRoute
   '/blogs/blog-left-sidebar': typeof BlogsBlogLeftSidebarRoute
   '/blogs/blog-right-sidebar': typeof BlogsBlogRightSidebarRoute
   '/blogs/blog-standard': typeof BlogsBlogStandardRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/blogs/': typeof BlogsIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/demo/form/address': typeof DemoFormAddressRoute
@@ -274,9 +323,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/code-of-conduct': typeof CodeOfConductRoute
+  '/commission-disclosure': typeof CommissionDisclosureRoute
   '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/hello': typeof HelloRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/sid-sai-kim': typeof SidSaiKimRoute
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
@@ -294,10 +348,12 @@ export interface FileRoutesByTo {
   '/product-details': typeof shopProductDetailsRoute
   '/products': typeof shopProductsRoute
   '/wishlist': typeof shopWishlistRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
   '/blogs/blog-details': typeof BlogsBlogDetailsRoute
   '/blogs/blog-left-sidebar': typeof BlogsBlogLeftSidebarRoute
   '/blogs/blog-right-sidebar': typeof BlogsBlogRightSidebarRoute
   '/blogs/blog-standard': typeof BlogsBlogStandardRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/blogs': typeof BlogsIndexRoute
   '/services': typeof ServicesIndexRoute
   '/demo/form/address': typeof DemoFormAddressRoute
@@ -313,9 +369,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/code-of-conduct': typeof CodeOfConductRoute
+  '/commission-disclosure': typeof CommissionDisclosureRoute
   '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/hello': typeof HelloRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/sid-sai-kim': typeof SidSaiKimRoute
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
@@ -333,10 +394,12 @@ export interface FileRoutesById {
   '/(shop)/product-details': typeof shopProductDetailsRoute
   '/(shop)/products': typeof shopProductsRoute
   '/(shop)/wishlist': typeof shopWishlistRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
   '/blogs/blog-details': typeof BlogsBlogDetailsRoute
   '/blogs/blog-left-sidebar': typeof BlogsBlogLeftSidebarRoute
   '/blogs/blog-right-sidebar': typeof BlogsBlogRightSidebarRoute
   '/blogs/blog-standard': typeof BlogsBlogStandardRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/blogs/': typeof BlogsIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/demo/form/address': typeof DemoFormAddressRoute
@@ -353,9 +416,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/code-of-conduct'
+    | '/commission-disclosure'
     | '/contact'
+    | '/disclaimer'
     | '/hello'
     | '/knowledge-hub'
+    | '/privacy-policy'
+    | '/sid-sai-kim'
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
@@ -373,10 +441,12 @@ export interface FileRouteTypes {
     | '/product-details'
     | '/products'
     | '/wishlist'
+    | '/blogs/$slug'
     | '/blogs/blog-details'
     | '/blogs/blog-left-sidebar'
     | '/blogs/blog-right-sidebar'
     | '/blogs/blog-standard'
+    | '/services/$slug'
     | '/blogs/'
     | '/services/'
     | '/demo/form/address'
@@ -391,9 +461,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/code-of-conduct'
+    | '/commission-disclosure'
     | '/contact'
+    | '/disclaimer'
     | '/hello'
     | '/knowledge-hub'
+    | '/privacy-policy'
+    | '/sid-sai-kim'
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
@@ -411,10 +486,12 @@ export interface FileRouteTypes {
     | '/product-details'
     | '/products'
     | '/wishlist'
+    | '/blogs/$slug'
     | '/blogs/blog-details'
     | '/blogs/blog-left-sidebar'
     | '/blogs/blog-right-sidebar'
     | '/blogs/blog-standard'
+    | '/services/$slug'
     | '/blogs'
     | '/services'
     | '/demo/form/address'
@@ -429,9 +506,14 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/code-of-conduct'
+    | '/commission-disclosure'
     | '/contact'
+    | '/disclaimer'
     | '/hello'
     | '/knowledge-hub'
+    | '/privacy-policy'
+    | '/sid-sai-kim'
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
@@ -449,10 +531,12 @@ export interface FileRouteTypes {
     | '/(shop)/product-details'
     | '/(shop)/products'
     | '/(shop)/wishlist'
+    | '/blogs/$slug'
     | '/blogs/blog-details'
     | '/blogs/blog-left-sidebar'
     | '/blogs/blog-right-sidebar'
     | '/blogs/blog-standard'
+    | '/services/$slug'
     | '/blogs/'
     | '/services/'
     | '/demo/form/address'
@@ -468,9 +552,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CodeOfConductRoute: typeof CodeOfConductRoute
+  CommissionDisclosureRoute: typeof CommissionDisclosureRoute
   ContactRoute: typeof ContactRoute
+  DisclaimerRoute: typeof DisclaimerRoute
   HelloRoute: typeof HelloRoute
   KnowledgeHubRoute: typeof KnowledgeHubRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  SidSaiKimRoute: typeof SidSaiKimRoute
   SinglePageHomeOneRoute: typeof SinglePageHomeOneRoute
   SinglePageHomeThreeRoute: typeof SinglePageHomeThreeRoute
   SinglePageHomeTwoRoute: typeof SinglePageHomeTwoRoute
@@ -488,10 +577,12 @@ export interface RootRouteChildren {
   shopProductDetailsRoute: typeof shopProductDetailsRoute
   shopProductsRoute: typeof shopProductsRoute
   shopWishlistRoute: typeof shopWishlistRoute
+  BlogsSlugRoute: typeof BlogsSlugRoute
   BlogsBlogDetailsRoute: typeof BlogsBlogDetailsRoute
   BlogsBlogLeftSidebarRoute: typeof BlogsBlogLeftSidebarRoute
   BlogsBlogRightSidebarRoute: typeof BlogsBlogRightSidebarRoute
   BlogsBlogStandardRoute: typeof BlogsBlogStandardRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
   BlogsIndexRoute: typeof BlogsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
   DemoFormAddressRoute: typeof DemoFormAddressRoute
@@ -527,6 +618,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SinglePageHomeOneRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sid-sai-kim': {
+      id: '/sid-sai-kim'
+      path: '/sid-sai-kim'
+      fullPath: '/sid-sai-kim'
+      preLoaderRoute: typeof SidSaiKimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/knowledge-hub': {
       id: '/knowledge-hub'
       path: '/knowledge-hub'
@@ -541,11 +646,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HelloRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/commission-disclosure': {
+      id: '/commission-disclosure'
+      path: '/commission-disclosure'
+      fullPath: '/commission-disclosure'
+      preLoaderRoute: typeof CommissionDisclosureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/code-of-conduct': {
+      id: '/code-of-conduct'
+      path: '/code-of-conduct'
+      fullPath: '/code-of-conduct'
+      preLoaderRoute: typeof CodeOfConductRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -576,6 +702,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blogs/blog-standard': {
       id: '/blogs/blog-standard'
       path: '/blogs/blog-standard'
@@ -602,6 +735,13 @@ declare module '@tanstack/react-router' {
       path: '/blogs/blog-details'
       fullPath: '/blogs/blog-details'
       preLoaderRoute: typeof BlogsBlogDetailsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/$slug': {
+      id: '/blogs/$slug'
+      path: '/blogs/$slug'
+      fullPath: '/blogs/$slug'
+      preLoaderRoute: typeof BlogsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/(shop)/wishlist': {
@@ -764,9 +904,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CodeOfConductRoute: CodeOfConductRoute,
+  CommissionDisclosureRoute: CommissionDisclosureRoute,
   ContactRoute: ContactRoute,
+  DisclaimerRoute: DisclaimerRoute,
   HelloRoute: HelloRoute,
   KnowledgeHubRoute: KnowledgeHubRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  SidSaiKimRoute: SidSaiKimRoute,
   SinglePageHomeOneRoute: SinglePageHomeOneRoute,
   SinglePageHomeThreeRoute: SinglePageHomeThreeRoute,
   SinglePageHomeTwoRoute: SinglePageHomeTwoRoute,
@@ -784,10 +929,12 @@ const rootRouteChildren: RootRouteChildren = {
   shopProductDetailsRoute: shopProductDetailsRoute,
   shopProductsRoute: shopProductsRoute,
   shopWishlistRoute: shopWishlistRoute,
+  BlogsSlugRoute: BlogsSlugRoute,
   BlogsBlogDetailsRoute: BlogsBlogDetailsRoute,
   BlogsBlogLeftSidebarRoute: BlogsBlogLeftSidebarRoute,
   BlogsBlogRightSidebarRoute: BlogsBlogRightSidebarRoute,
   BlogsBlogStandardRoute: BlogsBlogStandardRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
   BlogsIndexRoute: BlogsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
   DemoFormAddressRoute: DemoFormAddressRoute,

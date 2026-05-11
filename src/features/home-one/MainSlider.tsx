@@ -21,6 +21,7 @@ const MainSlider: React.FC = () => {
   return (
     <SectionWrapper id="home" className="main-slider">
       <div className={`item active`}>
+        {/* SHAPES */}
         <div className="main-slider__shape-bg"></div>
         <div className="main-slider__shape-1 float-bob-x">
           <img
@@ -36,23 +37,25 @@ const MainSlider: React.FC = () => {
             alt="shapeImage"
           />
         </div>
-        <div className="main-slider__bg-box">
+
+        {/* BACKGROUND */}
+        {/* <div className="main-slider__bg-box">
           <div className="main-slider__bg one"></div>
-        </div>
+        </div> */}
 
         <div className={'row px-4'}>
-          <div className="container col-12 col-xl-4">
+          <div className="container col-12">
             <div className="main-slider__content">
-              <div className="main-slider__sub-title-box">
+              <div className="main-slider__sub-title-box justify-content-center">
                 <div className="main-slider__sub-title-shape"></div>
                 <p className="main-slider__sub-title">
                   Find the Best support you need today.
                 </p>
               </div>
-              <h2 className="main-slider__title">
+              <h2 className="main-slider__title text-center">
                 Your <span>financial</span> life <br /> <span>managed.</span>
               </h2>
-              <p className="main-slider__text">
+              <p className="main-slider__text text-center">
                 We help companies develop powerful corporate social
                 responsibility, grantmaking, <br /> and employee engagement
                 strategies. Dicta sunt explicabo. Nemo
@@ -84,7 +87,7 @@ const MainSlider: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className={'col-12 col-xl-8'}>
+          <div className={'col-12'}>
             <FeatureCarousel />
           </div>
         </div>

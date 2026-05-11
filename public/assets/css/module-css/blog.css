@@ -561,6 +561,13 @@
   z-index: 1;
 }
 
+#blog-markdown > h2 {
+  margin-bottom: 0.5rem;
+}
+#blog-markdown > ul {
+  margin-bottom: 0.5rem;
+}
+
 .blog-details__left {
   position: relative;
   display: block;
@@ -617,7 +624,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 110px;
+  /* width: 110px; */
+  width: fit-content;
+  padding: 0px 10px 0px 10px;
   height: 31px;
   background-color: var(--fixpro-base);
   border-radius: 16px;

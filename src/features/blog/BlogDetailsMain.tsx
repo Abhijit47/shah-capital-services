@@ -1,56 +1,69 @@
+import { MDXContent } from '@content-collections/mdx/react'
+// import { allPosts } from 'content-collections';
+
+import { formattedDate } from '#/lib/utls.ts'
+import { Route } from '#/routes/blogs/$slug.tsx'
 import BlogSidebar from './BlogSidebar'
 import BlogDetailsImg1 from '/assets/images/blog/blog-details-img-1.jpg'
-import BlogDetailsImgBoxImg1 from '/assets/images/blog/blog-details-img-box-img-1.jpg'
-import BlogDetailsImgBoxImg2 from '/assets/images/blog/blog-details-img-box-img-2.jpg'
-import Comment11 from '/assets/images/blog/comment-1-1.jpg'
-import Comment12 from '/assets/images/blog/comment-1-2.jpg'
+
+// import BlogDetailsImgBoxImg1 from '/assets/images/blog/blog-details-img-box-img-1.jpg'
+// import BlogDetailsImgBoxImg2 from '/assets/images/blog/blog-details-img-box-img-2.jpg'
+// import Comment11 from '/assets/images/blog/comment-1-1.jpg'
+// import Comment12 from '/assets/images/blog/comment-1-2.jpg'
 
 const BlogDetailsMain: React.FC = () => {
-  const handleComment = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-  }
+  // const handleComment = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault()
+  // }
+
+  // const blog = allPosts[0]
+  const blog = Route.useRouteContext()
+
+  // const tags = [];
+
+  // blog.categories.forEach((category) => {
+  //   if (!tags.includes(category)) {
+  //     tags.push(category);
+  //   }
+  // });
+
   return (
     <section className="blog-details">
       <div className="container">
         <div className="row">
           <div className="col-xl-8 col-lg-7">
-            <div className="blog-details__left">
-              <div className="blog-details__img">
-                <img
-                  src={BlogDetailsImg1}
-                  width={850}
-                  height={509}
-                  alt="Image"
-                />
-                <div className="blog-details__date">
-                  <p>
-                    12
-                    <br />
-                    Nov
-                  </p>
-                </div>
-              </div>
-              <div className="blog-details__content">
-                <div className="blog-details__user-and-meta">
-                  <div className="blog-details__user">
-                    <p>
-                      <span className="icon-user-1"></span>By Admin
-                    </p>
+            <article id="blog">
+              <div className="blog-details__left">
+                <div className="blog-details__img">
+                  <img
+                    src={BlogDetailsImg1}
+                    width={850}
+                    height={509}
+                    alt="Image"
+                  />
+                  <div className="blog-details__date">
+                    <p>{formattedDate(blog.createdAt)}</p>
                   </div>
-                  <ul className="blog-details__meta list-unstyled">
-                    <li>
-                      <a href="#">
-                        <span className="fas fa-comments"></span>Comments (05)
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span className="fas fa-clock"></span>4 Min Read
-                      </a>
-                    </li>
-                  </ul>
                 </div>
-                <h3 className="blog-details__title">
+                <div className="blog-details__content">
+                  <div className="blog-details__user-and-meta">
+                    <div className="blog-details__user">
+                      <p>
+                        <span className="icon-user-11"></span>By {blog.author}
+                      </p>
+                    </div>
+                    <ul className="blog-details__meta list-unstyled">
+                      <li>
+                        <a href="#">
+                          <span className="fas fa-clock"></span>
+                          {blog.readTime} Min Read
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <MDXContent code={blog.mdx} />
+                  {/* <h3 className="blog-details__title">
                   Elase They Endures Pains to Avoid The Worse Pains Taken
                 </h3>
                 <p className="blog-details__text-1">
@@ -112,11 +125,32 @@ const BlogDetailsMain: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="blog-details__tag-and-share">
-                  <div className="blog-details__tag">
-                    <h3 className="blog-details__tag-title">Tags :</h3>
-                    <ul className="blog-details__tag-list list-unstyled">
+                </div> */}
+
+                  <div className="blog-details__tag-and-share">
+                    <div className="blog-details__tag">
+                      <h3 className="blog-details__tag-title">Tags :</h3>
+
+                      <div
+                        className={
+                          'd-flex flex-wrap align-items-center justify-content-center gap-2'
+                        }
+                      >
+                        {blog.categories.map((category) => (
+                          <span
+                            className={'badge bg-secondary text-white'}
+                            key={category}
+                          >
+                            {category}
+                          </span>
+                        ))}
+                      </div>
+                      {/* <ul className="blog-details__tag-list list-unstyled">
+                      {blog.categories.map((category) => (
+                        <li className={'badge'}>
+                          <a href="#">{category}</a>
+                        </li>
+                      ))}
                       <li>
                         <a href="#">Analysis</a>
                       </li>
@@ -126,27 +160,28 @@ const BlogDetailsMain: React.FC = () => {
                       <li>
                         <a href="#">Management</a>
                       </li>
-                    </ul>
-                  </div>
-                  <div className="blog-details__share-box">
-                    <h3 className="blog-details__share-title">Share :</h3>
-                    <div className="blog-details__share">
-                      <a href="#" title="Facebook">
-                        <span className="icon-facebook"></span>
-                      </a>
-                      <a href="#" title="Twitter">
-                        <span className="icon-xpa"></span>
-                      </a>
-                      <a href="#" title="Linkedin">
-                        <span className="icon-link-in"></span>
-                      </a>
-                      <a href="#" title="Instagram">
-                        <span className="icon-instagram"></span>
-                      </a>
+                    </ul> */}
+                    </div>
+                    <div className="blog-details__share-box">
+                      <h3 className="blog-details__share-title">Share :</h3>
+                      <div className="blog-details__share">
+                        <a href="#" title="Facebook">
+                          <span className="icon-facebook"></span>
+                        </a>
+                        <a href="#" title="Twitter">
+                          <span className="icon-xpa"></span>
+                        </a>
+                        <a href="#" title="Linkedin">
+                          <span className="icon-link-in"></span>
+                        </a>
+                        <a href="#" title="Instagram">
+                          <span className="icon-instagram"></span>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="comment-one">
+
+                  {/* <div className="comment-one">
                   <div className="comment-one__single">
                     <div className="comment-one__image">
                       <img src={Comment11} width={70} height={70} alt="" />
@@ -189,8 +224,8 @@ const BlogDetailsMain: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="comment-form">
+                </div> */}
+                  {/* <div className="comment-form">
                   <h3 className="comment-form__title">Leave A Reply</h3>
                   <p className="comment-form__text">
                     By using form u agree with the message sorage, you can
@@ -243,9 +278,10 @@ const BlogDetailsMain: React.FC = () => {
                     </div>
                   </form>
                   <div className="result"></div>
+                </div> */}
                 </div>
               </div>
-            </div>
+            </article>
           </div>
           {/* Start Sidebar*/}
           <BlogSidebar wrapper="col-xl-4 col-lg-5" inner="sidebar" />

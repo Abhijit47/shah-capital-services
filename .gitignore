@@ -15,3 +15,5 @@ todos.json
 /docs
 # Local Netlify folder
 .netlify
+
+.content-collections

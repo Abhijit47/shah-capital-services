@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 
 import Banner from '#/features/banner/Banner'
 import type { AnimationVariant } from '@/components/elements/FadeInAdvanced'
@@ -44,7 +44,7 @@ export const servicesData: ServiceItem[] = [
     subTitle: 'Service Type 1',
     title: 'Mutual Funds',
     text: 'Disciplined, goal-based investing — not product selection.',
-    path: '',
+    path: '/services/mutual-funds',
     animationClass: 'fadeInLeft',
     animationDelay: 100,
   },
@@ -54,7 +54,7 @@ export const servicesData: ServiceItem[] = [
     subTitle: 'Service Type 2',
     title: 'Stocks & Securities',
     text: 'Direct equity, approached with discipline — not speculation.',
-    path: '',
+    path: '/services/stocks-securities',
     animationClass: 'fadeInUp',
     animationDelay: 300,
   },
@@ -64,7 +64,7 @@ export const servicesData: ServiceItem[] = [
     subTitle: 'Service Type 3',
     title: 'Insurance',
     text: 'Start with protection. Stay protected.',
-    path: '',
+    path: '/services/insurance',
     animationClass: 'fadeInRight',
     animationDelay: 500,
   },
@@ -74,7 +74,7 @@ export const servicesData: ServiceItem[] = [
     subTitle: 'Service Type 4',
     title: 'Gift City',
     text: 'Global investing, structured through India.',
-    path: '',
+    path: '/services/gift-city',
     animationClass: 'fadeInLeft',
     animationDelay: 700,
   },
@@ -84,7 +84,7 @@ export const servicesData: ServiceItem[] = [
     subTitle: 'Service Type 5',
     title: 'Fixed Deposit',
     text: 'Stability where it is needed.',
-    path: '',
+    path: '/services/fixed-deposit',
     animationClass: 'fadeInUp',
     animationDelay: 900,
   },
@@ -94,7 +94,7 @@ export const servicesData: ServiceItem[] = [
     subTitle: 'Service Type 6',
     title: 'Life Insurance',
     text: 'Financial protection for your family — nothing more, nothing less.',
-    path: '',
+    path: '/services/life-insurance',
     animationClass: 'fadeInRight',
     animationDelay: 1000,
   },
@@ -104,7 +104,7 @@ export const servicesData: ServiceItem[] = [
     subTitle: 'Service Type 7',
     title: 'Health Insurance',
     text: 'Protect your savings from medical uncertainty.',
-    path: '',
+    path: '/services/health-insurance',
     animationClass: 'flipInY',
     animationDelay: 1000,
   },
@@ -128,12 +128,12 @@ const ServicesSec: React.FC = () => {
                 </div>
                 <p className="services-three__sub-title">{service.subTitle}</p>
                 <h3 className="services-three__title">
-                  <a href={service.path}>{service.title}</a>
+                  <Link to={service.path}>{service.title}</Link>
                 </h3>
                 <p className="services-three__text">{service.text}</p>
-                {/* <a href={service.path} className="services-three__learn-more">
+                <Link to={service.path} className="services-three__learn-more">
                   Learn More<span className="icon-arrow-right"></span>
-                </a> */}
+                </Link>
               </div>
             </FadeInAdvanced>
           ))}

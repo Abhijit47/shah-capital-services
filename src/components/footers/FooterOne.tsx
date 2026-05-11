@@ -1,7 +1,6 @@
 import { Link } from '@tanstack/react-router'
 
 import FadeInAdvanced from '../elements/FadeInAdvanced'
-import footerLogo from '/assets/images/resources/footer-logo.png'
 import footerShape1 from '/assets/images/shapes/footer-widget-shape-1.png'
 
 interface WorkingHour {
@@ -11,7 +10,7 @@ interface WorkingHour {
 }
 
 interface NavLink {
-  id: number
+  id: string
   label: string
   to: string
 }
@@ -35,20 +34,32 @@ const workingHours: WorkingHour[] = [
 ]
 
 const quickLinks: NavLink[] = [
-  { id: 1, label: 'About Us', to: '/about' },
-  { id: 2, label: 'Portfolio', to: '/projects' },
-  { id: 3, label: 'Help & FAQs', to: '/faq' },
-  { id: 4, label: 'Blog', to: '/blog' },
-  { id: 5, label: 'Contact', to: '/contact' },
+  { id: crypto.randomUUID(), label: 'Home', to: '/' },
+  { id: crypto.randomUUID(), label: 'About Us', to: '/about' },
+  { id: crypto.randomUUID(), label: 'Services', to: '/services' },
+  { id: crypto.randomUUID(), label: 'Knowledge Hub', to: '/knowledge-hub' },
+  { id: crypto.randomUUID(), label: 'Contact', to: '/contact' },
 ]
 
-const serviceLinks: NavLink[] = [
-  { id: 1, label: 'Electric Repair', to: '/electric-panel-repair' },
-  { id: 2, label: 'Smart Watch Repair', to: '/installing-ceiling-fan' },
-  { id: 3, label: 'Smartphone Repair', to: '/commercial-services' },
-  { id: 4, label: 'Laptop Repair', to: '/lighting-fixtures' },
-  { id: 5, label: 'Desktop Repair', to: '/short-circuit-repair' },
+const otherLinks: NavLink[] = [
+  { id: crypto.randomUUID(), label: 'Disclaimer', to: '/disclaimer' },
+  {
+    id: crypto.randomUUID(),
+    label: 'Commission Disclosure',
+    to: '/commission-disclosure',
+  },
+  { id: crypto.randomUUID(), label: 'Privacy Policy', to: '/privacy-policy' },
+  { id: crypto.randomUUID(), label: 'Code of Conduct', to: '/code-of-conduct' },
+  { id: crypto.randomUUID(), label: 'SID / SAI / KIM', to: '/sid-sai-kim' },
 ]
+
+// const serviceLinks: NavLink[] = [
+//   { id: crypto.randomUUID(), label: 'Electric Repair', to: '/electric-panel-repair' },
+//   { id: crypto.randomUUID(), label: 'Smart Watch Repair', to: '/installing-ceiling-fan' },
+//   { id: crypto.randomUUID(), label: 'Smartphone Repair', to: '/commercial-services' },
+//   { id: crypto.randomUUID(), label: 'Laptop Repair', to: '/lighting-fixtures' },
+//   { id: crypto.randomUUID(), label: 'Desktop Repair', to: '/short-circuit-repair' },
+// ]
 
 const contactItems: ContactItem[] = [
   {
@@ -70,7 +81,12 @@ const contactItems: ContactItem[] = [
   {
     id: 3,
     icon: 'icon-location',
-    lines: [{ text: '4517 Washington Ave. Manchester, 95' }],
+    lines: [
+      {
+        text: 'Chennai, India - 600001',
+        href: 'https://maps.app.goo.gl/t5ec3D5DNHPP95WEA',
+      },
+    ],
   },
 ]
 
@@ -82,9 +98,9 @@ const socialLinks: SocialLink[] = [
 ]
 
 const bottomMenuLinks: NavLink[] = [
-  { id: 1, label: 'Support', to: '/contact' },
-  { id: 2, label: 'Terms and Condition', to: '/about' },
-  { id: 3, label: 'Privacy and Policy', to: '/about' },
+  { id: crypto.randomUUID(), label: 'Support', to: '/contact' },
+  { id: crypto.randomUUID(), label: 'Terms and Condition', to: '/about' },
+  { id: crypto.randomUUID(), label: 'Privacy and Policy', to: '/about' },
 ]
 
 const FooterOne: React.FC = () => {
@@ -113,9 +129,9 @@ const FooterOne: React.FC = () => {
                 <div className="footer-widget__logo">
                   <Link to="/">
                     <img
-                      src={footerLogo}
-                      width={138}
-                      height={40}
+                      src={'logo-landscape-2.png'}
+                      width={'100%'}
+                      height={80}
                       alt="Fixpro Logo"
                     />
                   </Link>
@@ -196,8 +212,28 @@ const FooterOne: React.FC = () => {
                       </div>
                     </FadeInAdvanced>
 
-                    {/* Services */}
+                    {/* Others */}
                     <FadeInAdvanced
+                      className="col-xl-4 col-lg-4 col-md-4 "
+                      variant="fadeInUp"
+                      delay={300}
+                    >
+                      <div className="footer-widget__column footer-widget__services">
+                        <div className="footer-widget__title-box">
+                          <h3 className="footer-widget__title">Others</h3>
+                        </div>
+                        <ul className="footer-widget__link list-unstyled">
+                          {otherLinks.map((link) => (
+                            <li key={link.id}>
+                              <Link to={link.to}>{link.label}</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </FadeInAdvanced>
+
+                    {/* Services */}
+                    {/* <FadeInAdvanced
                       className="col-xl-4 col-lg-4 col-md-4 "
                       variant="fadeInUp"
                       delay={300}
@@ -214,7 +250,7 @@ const FooterOne: React.FC = () => {
                           ))}
                         </ul>
                       </div>
-                    </FadeInAdvanced>
+                    </FadeInAdvanced> */}
 
                     {/* Contact Info */}
                     <FadeInAdvanced
@@ -238,7 +274,9 @@ const FooterOne: React.FC = () => {
                                 {item.lines.map((line, i) => (
                                   <p key={i}>
                                     {line.href ? (
-                                      <a href={line.href}>{line.text}</a>
+                                      <a href={line.href} target={'_blank'}>
+                                        {line.text}
+                                      </a>
                                     ) : (
                                       line.text
                                     )}
@@ -272,8 +310,8 @@ const FooterOne: React.FC = () => {
         <div className="container">
           <div className="site-footer__bottom-inner">
             <p className="site-footer__bottom-text">
-              © Copywright 2026 by <Link to="/">Fixpro</Link> All Rights
-              Reserved.
+              © Copywright {new Date().getFullYear()} by{' '}
+              <Link to="/">Shah Capital Services</Link> All Rights Reserved.
             </p>
             <ul className="list-unstyled site-footer__bottom-menu">
               {bottomMenuLinks.map((link) => (
