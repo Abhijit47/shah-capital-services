@@ -49,7 +49,13 @@ function HeaderOne() {
                 </div>
                 <div className="text">
                   <p>
-                    <a href="tel:15502505260">+1 (550) 250 5260</a>
+                    <a
+                      href="tel:+919840999879"
+                      target={'_blank'}
+                      rel="noopener noreferrer"
+                    >
+                      +91 9840999879
+                    </a>
                   </p>
                 </div>
               </li>
@@ -59,7 +65,13 @@ function HeaderOne() {
                 </div>
                 <div className="text">
                   <p>
-                    <a href="mailto:info@Fixpro24.com">info@Fixpro24.com</a>
+                    <a
+                      href="mailto:shahcapserv@gmail.com"
+                      target={'_blank'}
+                      rel="noopener noreferrer"
+                    >
+                      shahcapserv@gmail.com
+                    </a>
                   </p>
                 </div>
               </li>
@@ -68,7 +80,15 @@ function HeaderOne() {
                   <i className="icon-location"></i>
                 </div>
                 <div className="text">
-                  <p>4124 Cimmaron Road, CA 92806</p>
+                  <p>
+                    <a
+                      href="https://maps.app.goo.gl/t5ec3D5DNHPP95WEA"
+                      target={'_blank'}
+                      rel="noopener noreferrer"
+                    >
+                      Chennai, India - 600001
+                    </a>
+                  </p>
                 </div>
               </li>
             </ul>

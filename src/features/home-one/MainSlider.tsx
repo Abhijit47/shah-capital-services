@@ -62,9 +62,9 @@ const MainSlider: React.FC = () => {
               </p>
               <div className="main-slider__btn-box">
                 <div className="main-slider__btn">
-                  <a href="/about" className="thm-btn">
+                  <Link to="/about" className="thm-btn">
                     Discover More <span className="icon-arrow-right"></span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="main-slider__video-link">
                   <a

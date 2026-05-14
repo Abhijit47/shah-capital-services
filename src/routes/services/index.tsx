@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 
+import { ZohoServiceForm } from '#/components/convert.tsx'
+import ServiceForm from '#/components/ServiceForm.tsx'
 import Banner from '#/features/banner/Banner'
 import type { AnimationVariant } from '@/components/elements/FadeInAdvanced'
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced'
@@ -18,6 +20,21 @@ export const Route = createFileRoute('/services/')({
 function RouteComponent() {
   return (
     <main>
+      <section className="contact-page">
+        <div className="container">
+          {/* <div className="contact-page__inner"> */}
+          <div className="row">
+            <ZohoServiceForm />
+            <div className="">
+              <div className="contact-page__right">
+                <h3 className="contact-page__form-title">Get A Free Quote</h3>
+                <ServiceForm />
+              </div>
+            </div>
+          </div>
+          {/* </div> */}
+        </div>
+      </section>
       <div className="page-wrapper">
         <Banner title="Services" subTitle="Services" />
         <ServicesSec />

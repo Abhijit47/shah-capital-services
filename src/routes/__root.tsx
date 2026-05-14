@@ -64,6 +64,11 @@ export const Route = createRootRoute({
         href: '/favicon.png',
       },
     ],
+    scripts: [
+      {
+        src: '/assets/js/validation.js',
+      },
+    ],
   }),
   shellComponent: RootDocument,
   notFoundComponent: NotFound,

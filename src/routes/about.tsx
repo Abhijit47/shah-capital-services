@@ -38,7 +38,7 @@ function About() {
         <DetailsSecOne />
         {/* <ServiceOne /> */}
         {/* <ClientOnly fallback={<div>Loading...</div>}> */}
-        <SlidingText secClass="sliding-text-two" />
+        <SlidingText secClass="sliding-text-twoo" />
         {/* </ClientOnly> */}
         {/* <TeamOne /> */}
         <BrandOne />

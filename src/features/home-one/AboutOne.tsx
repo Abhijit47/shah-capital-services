@@ -1,3 +1,4 @@
+import CounterUp from '#/components/elements/CounterUp.tsx'
 import aboutOneImg1 from '/assets/images/resources/about-one-img-1.jpg'
 import aboutOneImg2 from '/assets/images/resources/about-one-img-2.jpg'
 import aboutOneShape2 from '/assets/images/shapes/about-one-shape-2.png'
@@ -6,42 +7,43 @@ import useFixproContext from '@/components/context/useFixproContext'
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced'
 import SectionWrapper from '@/components/elements/SectionWrapper'
 import TextAnimation from '@/components/elements/TextAnimation'
+import { ClientOnly, Link } from '@tanstack/react-router'
 
-interface PointItem {
-  id: number
-  iconClass: string
-  title: string
-  text: string
-}
+// interface PointItem {
+//   id: number
+//   iconClass: string
+//   title: string
+//   text: string
+// }
 
-interface CheckItem {
-  id: number
-  text: string
-}
+// interface CheckItem {
+//   id: number
+//   text: string
+// }
 
-const pointsData: PointItem[] = [
-  {
-    id: 1,
-    iconClass: 'icon-affordable-price',
-    title: 'Our Affordable Price',
-    text: 'There are many variations of passage majority',
-  },
-  {
-    id: 2,
-    iconClass: 'icon-happy-customer',
-    title: 'Customer Satisfied',
-    text: 'There are many variations of passage majority',
-  },
-]
+// const pointsData: PointItem[] = [
+//   {
+//     id: 1,
+//     iconClass: 'icon-affordable-price',
+//     title: 'Our Affordable Price',
+//     text: 'There are many variations of passage majority',
+//   },
+//   {
+//     id: 2,
+//     iconClass: 'icon-happy-customer',
+//     title: 'Customer Satisfied',
+//     text: 'There are many variations of passage majority',
+//   },
+// ]
 
-const checkItems: CheckItem[] = [
-  { id: 1, text: 'Monotonically predominate next-generation.' },
-  { id: 2, text: 'Interactively predominate out-of-the-box best practices.' },
-  {
-    id: 3,
-    text: 'Skilled Technicians Invest in a quality phone case to protect device.',
-  },
-]
+// const checkItems: CheckItem[] = [
+//   { id: 1, text: 'Monotonically predominate next-generation.' },
+//   { id: 2, text: 'Interactively predominate out-of-the-box best practices.' },
+//   {
+//     id: 3,
+//     text: 'Skilled Technicians Invest in a quality phone case to protect device.',
+//   },
+// ]
 
 export type SecProp = {
   secClass?: string
@@ -71,15 +73,14 @@ const AboutOne: React.FC<SecProp> = ({ secClass = '' }) => {
                 <div className="about-one__experience-box">
                   <div className="about-one__count-box">
                     <h3 className="odometer" data-count="25">
-                      {/* <ClientOnly fallback={null}>
-                        <CounterUp ending={25} />{' '}
-                      </ClientOnly> */}
-                      25
+                      <ClientOnly fallback={null}>
+                        <CounterUp ending={10} />{' '}
+                      </ClientOnly>
                     </h3>
                     <span>+</span>
                   </div>
                   <p className="about-one__experience-text">
-                    Years Experiences Maintenance Services
+                    Years Experiences
                   </p>
                 </div>
                 <div className="about-one__shape-1 float-bob-x"></div>
@@ -98,17 +99,39 @@ const AboutOne: React.FC<SecProp> = ({ secClass = '' }) => {
                 </h6>
                 <h3 className="section-title__title title-animation">
                   <TextAnimation animationStyle="style2">
-                    Welcome To Repair & Installing Company
+                    Our Story
                   </TextAnimation>
                 </h3>
               </div>
+              <hr />
               <p className="about-one__text">
-                There are many variations of passages available randomised words
-                which the majority have suffered alteration in some form, by
-                injected humour look page when looking at its layout even
-                slightly believable.
+                Our work began in 2005, when we saw a clear gap: too many people
+                were either going it alone with their investments or working
+                with advisors who pushed products instead of building plans.
               </p>
-              <div className="about-one__points-box">
+              <hr />
+              <p className="about-one__text">
+                We built something different. We do not push products. We sit
+                down, we understand your life - your business, your family, your
+                risks, and your goals and then we take ownership of your
+                financial future.
+              </p>
+              <hr />
+              <p className="about-one__text">
+                Every rupee you invest with us is managed with the discipline of
+                someone who has made your peace of mind their professional
+                responsibility. Today, Shah Capital manages over ₹90 crore
+                across more than 1,300 active investors and 423 family accounts.
+              </p>
+              <hr />
+              <p className="about-one__text">
+                Nearly every new client comes through a referral, because when
+                someone trusts us with their money, they tell the people they
+                care about. That is Shah Capital. Disciplined. Trustworthy.
+                Generational.
+              </p>
+              <hr />
+              {/* <div className="about-one__points-box">
                 <ul className="about-one__points list-unstyled">
                   {pointsData.map((point) => (
                     <li key={point.id}>
@@ -132,12 +155,12 @@ const AboutOne: React.FC<SecProp> = ({ secClass = '' }) => {
                     <p>{item.text}</p>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
               <div className="about-one__btn-and-video">
                 <div className="about-one__btn-box">
-                  <a href="/about" className="thm-btn">
+                  <Link to="/services" className="thm-btn">
                     Discover More<span className="icon-arrow-right"></span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="about-one__video-box">
                   <div className="about-one__video-link">

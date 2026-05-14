@@ -65,17 +65,13 @@ const contactItems: ContactItem[] = [
   {
     id: 1,
     icon: 'icon-phone-call',
-    lines: [
-      { text: '(88) 574 7546 027', href: 'tel:885747546027' },
-      { text: '(88) 574 7546 027', href: 'tel:885747546027' },
-    ],
+    lines: [{ text: '+91 9840999879', href: 'tel:+919840999879' }],
   },
   {
     id: 2,
     icon: 'icon-envelope',
     lines: [
-      { text: 'example@gmail.com', href: 'mailto:example@gmail.com' },
-      { text: 'example@gmail.com', href: 'mailto:example@gmail.com' },
+      { text: 'shahcapserv@gmail.com', href: 'mailto:shahcapserv@gmail.com' },
     ],
   },
   {

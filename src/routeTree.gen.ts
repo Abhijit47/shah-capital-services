@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsAndConditionRouteImport } from './routes/terms-and-condition'
 import { Route as SinglePageHomeTwoRouteImport } from './routes/single-page-home-two'
 import { Route as SinglePageHomeThreeRouteImport } from './routes/single-page-home-three'
 import { Route as SinglePageHomeOneRouteImport } from './routes/single-page-home-one'
@@ -53,6 +54,11 @@ import { Route as ServicesservicesCommercialServicesRouteImport } from './routes
 import { Route as DemoFormSimpleRouteImport } from './routes/demo/form.simple'
 import { Route as DemoFormAddressRouteImport } from './routes/demo/form.address'
 
+const TermsAndConditionRoute = TermsAndConditionRouteImport.update({
+  id: '/terms-and-condition',
+  path: '/terms-and-condition',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SinglePageHomeTwoRoute = SinglePageHomeTwoRouteImport.update({
   id: '/single-page-home-two',
   path: '/single-page-home-two',
@@ -289,6 +295,7 @@ export interface FileRoutesByFullPath {
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
+  '/terms-and-condition': typeof TermsAndConditionRoute
   '/login': typeof authLoginRoute
   '/sign-up': typeof authSignUpRoute
   '/faqs': typeof pagesFaqsRoute
@@ -334,6 +341,7 @@ export interface FileRoutesByTo {
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
+  '/terms-and-condition': typeof TermsAndConditionRoute
   '/login': typeof authLoginRoute
   '/sign-up': typeof authSignUpRoute
   '/faqs': typeof pagesFaqsRoute
@@ -380,6 +388,7 @@ export interface FileRoutesById {
   '/single-page-home-one': typeof SinglePageHomeOneRoute
   '/single-page-home-three': typeof SinglePageHomeThreeRoute
   '/single-page-home-two': typeof SinglePageHomeTwoRoute
+  '/terms-and-condition': typeof TermsAndConditionRoute
   '/(auth)/login': typeof authLoginRoute
   '/(auth)/sign-up': typeof authSignUpRoute
   '/(pages)/faqs': typeof pagesFaqsRoute
@@ -427,6 +436,7 @@ export interface FileRouteTypes {
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
+    | '/terms-and-condition'
     | '/login'
     | '/sign-up'
     | '/faqs'
@@ -472,6 +482,7 @@ export interface FileRouteTypes {
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
+    | '/terms-and-condition'
     | '/login'
     | '/sign-up'
     | '/faqs'
@@ -517,6 +528,7 @@ export interface FileRouteTypes {
     | '/single-page-home-one'
     | '/single-page-home-three'
     | '/single-page-home-two'
+    | '/terms-and-condition'
     | '/(auth)/login'
     | '/(auth)/sign-up'
     | '/(pages)/faqs'
@@ -563,6 +575,7 @@ export interface RootRouteChildren {
   SinglePageHomeOneRoute: typeof SinglePageHomeOneRoute
   SinglePageHomeThreeRoute: typeof SinglePageHomeThreeRoute
   SinglePageHomeTwoRoute: typeof SinglePageHomeTwoRoute
+  TermsAndConditionRoute: typeof TermsAndConditionRoute
   authLoginRoute: typeof authLoginRoute
   authSignUpRoute: typeof authSignUpRoute
   pagesFaqsRoute: typeof pagesFaqsRoute
@@ -597,6 +610,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms-and-condition': {
+      id: '/terms-and-condition'
+      path: '/terms-and-condition'
+      fullPath: '/terms-and-condition'
+      preLoaderRoute: typeof TermsAndConditionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/single-page-home-two': {
       id: '/single-page-home-two'
       path: '/single-page-home-two'
@@ -915,6 +935,7 @@ const rootRouteChildren: RootRouteChildren = {
   SinglePageHomeOneRoute: SinglePageHomeOneRoute,
   SinglePageHomeThreeRoute: SinglePageHomeThreeRoute,
   SinglePageHomeTwoRoute: SinglePageHomeTwoRoute,
+  TermsAndConditionRoute: TermsAndConditionRoute,
   authLoginRoute: authLoginRoute,
   authSignUpRoute: authSignUpRoute,
   pagesFaqsRoute: pagesFaqsRoute,
