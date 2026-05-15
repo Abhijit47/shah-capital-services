@@ -1,5 +1,6 @@
 import type { ChangeEvent, SubmitEvent } from 'react'
 import { useState } from 'react'
+import Swal from 'sweetalert2'
 
 // Type safety definitions for form state
 interface FormData {
@@ -51,7 +52,14 @@ export const ZohoServiceForm: React.FC = () => {
       formData.Dropdown3 === '-Select-'
     ) {
       e.preventDefault() // 🛑 Stops submission if fields are missing/empty
-      alert('Please fill in all mandatory fields.')
+      // alert('Please fill in all mandatory fields.')
+      e.stopPropagation() // Prevents any further event bubbling
+      Swal.fire({
+        icon: 'warning',
+        title: 'Missing Fields',
+        text: 'Please fill in all mandatory fields..',
+        confirmButtonColor: '#e74c3c',
+      })
       return false
     }
 
@@ -60,7 +68,14 @@ export const ZohoServiceForm: React.FC = () => {
       /^[\w]([\w\-.+&'/]*)@([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,22}$/
     if (!emailRegex.test(formData.Email)) {
       e.preventDefault() // 🛑 Stops submission if email is formatted incorrectly
-      alert('Please enter a valid email address.')
+      // alert('Please enter a valid email address.')
+      e.stopPropagation() // Prevents any further event bubbling
+      Swal.fire({
+        icon: 'warning',
+        title: 'Missing Fields',
+        text: 'Please enter a valid email address..',
+        confirmButtonColor: '#e74c3c',
+      })
       return false
     }
 
@@ -90,18 +105,12 @@ export const ZohoServiceForm: React.FC = () => {
 
       {/* Critical: action, method, and acceptCharset match your Zoho configuration exactly */}
       <form
-        // action="https://zohopublic.in"
         name="form"
         method="POST"
         acceptCharset="UTF-8"
         encType="multipart/form-data"
         onSubmit={handleFormSubmit}
         action="https://forms.zohopublic.in/shahcapserv/form/ServiceInterestForm1/formperma/GrkJuXH1-UmbYtfdKwHDr8tbvWmc4V8ryZ413nPgrQk/htmlRecords/submit"
-        // name="form"
-        // method="POST"
-        // onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
-        accept-charset="UTF-8"
-        // enctype="multipart/form-data"
         id="form"
       >
         {/* Hidden Tracking Configurations */}
@@ -118,7 +127,71 @@ export const ZohoServiceForm: React.FC = () => {
         <input type="hidden" name="zc_gad" value={formData.zc_gad} />
 
         {/* Name Field */}
-        <div>
+        <div className="form-floating mb-3">
+          <input
+            type="text"
+            id="floatingInputName"
+            name="SingleLine"
+            className="form-control"
+            maxLength={255}
+            value={formData.SingleLine}
+            onChange={handleInputChange}
+            placeholder="Ex. Jhon Doe"
+          />
+          <label htmlFor="floatingInputName">Name *</label>
+        </div>
+        <div className="form-floating mb-3">
+          <input
+            className="form-control"
+            placeholder="name@example.com"
+            id="floatingInputPhone"
+            type="text"
+            name="PhoneNumber_countrycode"
+            maxLength={20}
+            value={formData.PhoneNumber_countrycode}
+            onChange={handleInputChange}
+          />
+          <label htmlFor="floatingInputPhone">Mobile *</label>
+        </div>
+        <div className="form-floating mb-3">
+          <input
+            className="form-control"
+            id="floatingInputEmail"
+            placeholder="name@example.com"
+            type="email"
+            name="Email"
+            maxLength={255}
+            value={formData.Email}
+            onChange={handleInputChange}
+          />
+          <label htmlFor="floatingInputEmail">Email address *</label>
+        </div>
+        <div className="form-floating mb-3">
+          <select
+            className="form-select"
+            id="floatingServiceInterest"
+            aria-label="Service Interest"
+            name="Dropdown3"
+            value={formData.Dropdown3}
+            onChange={handleInputChange}
+          >
+            <option value="-Select-">-Select-</option>
+            <option value="Mutual Funds">Mutual Funds</option>
+            <option value="Fixed Deposit">Fixed Deposit</option>
+            <option value="Health Insurance">Health Insurance</option>
+            <option value="Stocks and Securities">Stocks and Securities</option>
+            <option value="Life Insurance">Life Insurance</option>
+            <option value="Vehicle Insurance">Vehicle Insurance</option>
+            <option value="Travel Insurance">Travel Insurance</option>
+            <option value="Miscellaneous Insurance">
+              Miscellaneous Insurance
+            </option>
+          </select>
+          <label htmlFor="floatingServiceInterest">Service Interest</label>
+        </div>
+
+        {/* old */}
+        {/* <div>
           <label>Name *</label>
           <input
             type="text"
@@ -127,10 +200,10 @@ export const ZohoServiceForm: React.FC = () => {
             value={formData.SingleLine}
             onChange={handleInputChange}
           />
-        </div>
+        </div> */}
 
         {/* Mobile Field */}
-        <div>
+        {/* <div>
           <label>Mobile *</label>
           <input
             type="text"
@@ -139,10 +212,10 @@ export const ZohoServiceForm: React.FC = () => {
             value={formData.PhoneNumber_countrycode}
             onChange={handleInputChange}
           />
-        </div>
+        </div> */}
 
         {/* Email Field */}
-        <div>
+        {/* <div>
           <label>Email *</label>
           <input
             type="text"
@@ -151,10 +224,10 @@ export const ZohoServiceForm: React.FC = () => {
             value={formData.Email}
             onChange={handleInputChange}
           />
-        </div>
+        </div> */}
 
         {/* Service Selection Dropdown */}
-        <div>
+        {/* <div>
           <label>Service Interest *</label>
           <select
             name="Dropdown3"
@@ -173,11 +246,16 @@ export const ZohoServiceForm: React.FC = () => {
               Miscellaneous Insurance
             </option>
           </select>
-        </div>
+        </div> */}
 
         {/* Submission Execution */}
-        <button type="submit" style={{ marginTop: '15px' }}>
-          Submit
+        <hr />
+        <button
+          type="submit"
+          className={'thm-btn'}
+          // style={{ marginTop: '15px' }}
+        >
+          Send Request
         </button>
       </form>
     </div>

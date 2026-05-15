@@ -125,9 +125,10 @@ const FooterOne: React.FC = () => {
                 <div className="footer-widget__logo">
                   <Link to="/">
                     <img
-                      src={'logo-landscape-2.png'}
+                      // src={'logo-landscape-2.png'}
+                      src={'footer-logo.png'}
                       width={'100%'}
-                      height={80}
+                      height={'100%'}
                       alt="Fixpro Logo"
                     />
                   </Link>
@@ -136,7 +137,7 @@ const FooterOne: React.FC = () => {
                   Secure other greater pleasures, or else he endures pains to
                   avoid worse pains selection
                 </p>
-                <div className="footer-widget__working-box">
+                {/* <div className="footer-widget__working-box">
                   <h3 className="footer-widget__working-title">
                     Working Hours:
                   </h3>
@@ -150,7 +151,7 @@ const FooterOne: React.FC = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </div> */}
               </div>
             </FadeInAdvanced>
 
