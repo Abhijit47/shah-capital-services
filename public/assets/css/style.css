@@ -18,15 +18,20 @@
 # Common
 --------------------------------------------------------------*/
 :root {
-  --fixpro-font: 'Archivo Variable', sans-serif;
-  --fixpro-font-two: 'Titillium Web', sans-serif;
+  /* --fixpro-font: 'Archivo Variable', sans-serif; */
+  /* --fixpro-font-two: 'Titillium Web', sans-serif; */
+  --fixpro-font: 'Sora Variable', sans-serif;
+  --fixpro-font-two: 'Inter Variable', sans-serif;
   --fixpro-gray: #757f95;
   --fixpro-gray-rgb: 117, 127, 149;
-  --fixpro-base: #2ab97e;
-  --fixpro-base-rgb: 42, 185, 126;
+  /* --fixpro-base: #2ab97e; */
+  --fixpro-base: #0f766e;
+  /* --fixpro-base-rgb: 42, 185, 126; */
+  --fixpro-base-rgb: 94, 234, 212;
   --fixpro-primary: #f7f7f9;
   --fixpro-primary-rgb: 247, 247, 249;
-  --fixpro-black: #191a1c;
+  /* --fixpro-black: #191a1c; */
+  --fixpro-black: #062f2f;
   --fixpro-black-rgb: 25, 26, 28;
   --fixpro-white: #ffffff;
   --fixpro-white-rgb: 255, 255, 255;
@@ -342,7 +347,7 @@ xs sidebar
   -webkit-transition: all 0.4s ease-in 0.8s;
   -o-transition: all 0.4s ease-in 0.8s;
   transition: all 0.4s ease-in 0.8s;
-  cursor: url(/assets/imagesicon/cross-out.png), pointer;
+  cursor: url('/assets/images/icon/cross-out.png'), pointer;
   z-index: 99999;
 }
 

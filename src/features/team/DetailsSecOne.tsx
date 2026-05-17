@@ -1,5 +1,5 @@
 import { servicesData } from '#/routes/services/index.tsx'
-import Progressbar from '@/components/elements/Progressbar'
+// import Progressbar from '@/components/elements/Progressbar'
 import { Link } from '@tanstack/react-router'
 
 interface SocialLink {
@@ -190,7 +190,7 @@ const DetailsSecOne: React.FC = () => {
 
         <div className="team-details__bottom">
           <div className="row">
-            <div className="col-xl-6 col-lg-6">
+            <div className="col-12">
               <div className="team-details__bottom-left">
                 <h3 className="team-details__bottom-title">Founder’s Note</h3>
                 <p className="team-details__bottom-text">
@@ -262,7 +262,7 @@ const DetailsSecOne: React.FC = () => {
               </div>
             </div>
 
-            <div className="col-xl-6 col-lg-6">
+            {/* <div className="col-xl-6 col-lg-6">
               <div className="team-details__bottom-right">
                 <h3 className="team-details__progress-title-1">Expertise In</h3>
                 <ul className="team-details__progress-list list-unstyled">
@@ -276,7 +276,7 @@ const DetailsSecOne: React.FC = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

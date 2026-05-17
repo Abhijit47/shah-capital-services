@@ -59,6 +59,7 @@
   left: 20px;
   right: 20px;
   bottom: 20px;
+  /* background-color: rgba(var(--fixpro-base-rgb), 0.8); */
   background-color: rgba(var(--fixpro-base-rgb), 0.8);
   border-radius: var(--fixpro-bdr-radius);
   -webkit-transform: perspective(400px) rotateX(90deg) scaleY(0.5);

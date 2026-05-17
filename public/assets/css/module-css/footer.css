@@ -33,7 +33,7 @@
 }
 
 .footer-widget__newsletter-bg {
-  background-image: url('..//assets/imagesbackgrounds/footer-widget-newsletter-bg.jpg');
+  background-image: url('/assets/images/backgrounds/footer-widget-newsletter-bg.jpg');
   position: absolute;
   top: 0;
   left: 11px;

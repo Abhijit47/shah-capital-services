@@ -79,9 +79,9 @@ const TestimonialOne: React.FC = () => {
             slidesPerView={2}
             loop={true}
             autoplay={{
-              delay: 4000,
+              delay: 2000,
               disableOnInteraction: false,
-              pauseOnMouseEnter: false,
+              pauseOnMouseEnter: true,
             }}
             speed={1000}
             breakpoints={{

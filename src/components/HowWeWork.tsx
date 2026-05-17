@@ -1,10 +1,11 @@
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced'
 import TextAnimation from '@/components/elements/TextAnimation'
+import type { ReactNode } from 'react'
 import processTwoShape1 from '/assets/images/shapes/process-two-shape-1.png'
 
 interface ProcessItem {
   id: number
-  icon: string
+  icon: ReactNode
   title: string
   text: string
   animation: string
@@ -13,21 +14,21 @@ interface ProcessItem {
 const processItems: ProcessItem[] = [
   {
     id: 1,
-    icon: 'icon-technician-1',
+    icon: <i className="fa-regular fa-comment-dots"></i>,
     title: 'We discuss First ',
     text: 'We begin by understanding your life, goals, and concerns — not your money.',
     animation: 'fadeInLeft',
   },
   {
     id: 2,
-    icon: 'icon-settings-1',
+    icon: <i className="fa-solid fa-chalkboard-user"></i>,
     title: 'Educate Next',
     text: 'We simplify your options so you can make clear, informed decisions without pressure.',
     animation: 'fadeInRight',
   },
   {
     id: 3,
-    icon: 'icon-smart-lighting',
+    icon: <i className="fa-solid fa-people-line"></i>,
     title: 'Execute Together',
     text: 'Every step is implemented with your consent, aligned to a structured long-term plan.',
     animation: 'fadeInLeft',
@@ -75,7 +76,8 @@ export default function HowWeWork() {
                 <div className="process-two__single">
                   <div className="process-two__count"></div>
                   <div className="process-two__icon">
-                    <span className={item.icon}></span>
+                    <span>{item.icon}</span>
+                    {/* <span className={item.icon}></span> */}
                   </div>
                   <h3 className="process-two__title">{item.title}</h3>
                   <p className="process-two__text">{item.text}</p>

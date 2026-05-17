@@ -10,22 +10,32 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 
 import globalCss from '../global.css?url'
 
-import '@fontsource-variable/archivo/wdth-italic.css'
-import '@fontsource-variable/archivo/wdth.css'
-import '@fontsource-variable/archivo/wght.css'
+// import '@fontsource-variable/archivo/wdth-italic.css'
+// import '@fontsource-variable/archivo/wdth.css'
+// import '@fontsource-variable/archivo/wght.css'
 
-import '@fontsource/titillium-web/200.css'
-import '@fontsource/titillium-web/300.css'
-import '@fontsource/titillium-web/400.css'
-import '@fontsource/titillium-web/600.css'
-import '@fontsource/titillium-web/700.css'
-import '@fontsource/titillium-web/900.css'
+import '@fontsource-variable/inter/wght.css'
+import '@fontsource-variable/sora/wght.css'
 
-import '@fontsource/titillium-web/200-italic.css'
-import '@fontsource/titillium-web/300-italic.css'
-import '@fontsource/titillium-web/400-italic.css'
-import '@fontsource/titillium-web/600-italic.css'
-import '@fontsource/titillium-web/700-italic.css'
+// import '@fontsource/sora/200.css'
+// import '@fontsource/sora/300.css'
+// import '@fontsource/sora/400.css'
+// import '@fontsource/sora/600.css'
+// import '@fontsource/sora/700.css'
+// import '@fontsource/sora/800.css'
+
+// import '@fontsource/titillium-web/200.css'
+// import '@fontsource/titillium-web/300.css'
+// import '@fontsource/titillium-web/400.css'
+// import '@fontsource/titillium-web/600.css'
+// import '@fontsource/titillium-web/700.css'
+// import '@fontsource/titillium-web/900.css'
+
+// import '@fontsource/titillium-web/200-italic.css'
+// import '@fontsource/titillium-web/300-italic.css'
+// import '@fontsource/titillium-web/400-italic.css'
+// import '@fontsource/titillium-web/600-italic.css'
+// import '@fontsource/titillium-web/700-italic.css'
 // import '@fontsource/titillium-web/900-italic.css'
 
 import 'swiper/swiper-bundle.css'
@@ -62,6 +72,14 @@ export const Route = createRootRoute({
       {
         rel: 'icon',
         href: '/favicon.png',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css',
+        integrity:
+          'sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==',
+        crossOrigin: 'anonymous',
+        referrerPolicy: 'no-referrer',
       },
     ],
     scripts: [

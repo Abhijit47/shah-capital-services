@@ -82,11 +82,12 @@ function HeaderOne() {
                 <div className="text">
                   <p>
                     <a
-                      href="https://maps.app.goo.gl/t5ec3D5DNHPP95WEA"
+                      href="https://maps.app.goo.gl/bntg6fuaKdHhdkLZ6"
                       target={'_blank'}
                       rel="noopener noreferrer"
                     >
-                      Chennai, India - 600001
+                      Old no. 477, Mint Street, Kondithope, Chennai, Tamil Nadu,
+                      600001, India
                     </a>
                   </p>
                 </div>
@@ -96,12 +97,12 @@ function HeaderOne() {
               Welcome to Our Fixpro Office
             </p>
             <div className="main-menu__top-right">
-              <div className="main-menu__top-time">
+              {/* <div className="main-menu__top-time">
                 <div className="main-menu__top-time-icon">
                   <span className="icon-clock"></span>
                 </div>
                 <p className="main-menu__top-text">Mon - Fri: 09:00 - 05:00</p>
-              </div>
+              </div> */}
               <div className="main-menu__social">
                 <a href="#" title="Twitter">
                   <i className="fab fa-twitter"></i>

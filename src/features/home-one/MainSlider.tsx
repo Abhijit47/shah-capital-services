@@ -5,8 +5,10 @@ import { Link } from '@tanstack/react-router'
 import { Fragment } from 'react/jsx-runtime'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import shape from '/assets/images/shapes/main-slider-shape-1.png'
-import shapeTwo from '/assets/images/shapes/main-slider-shape-2.png'
+// import shape from '/assets/images/shapes/main-slider-shape-1.png'
+// import shapeTwo from '/assets/images/shapes/main-slider-shape-2.png'
+import shape from '/hero-icon-1.png'
+import shapeTwo from '/hero-icon-2.png'
 
 // import { useState } from 'react'
 // import type { Swiper as SwiperType } from 'swiper'
@@ -414,11 +416,11 @@ function FeatureCarousel() {
             isDev
               ? undefined
               : {
-                  delay: 4000,
+                  delay: 1500,
                   disableOnInteraction: false,
                 }
           }
-          speed={1000}
+          speed={300}
           modules={[Autoplay]}
           breakpoints={{
             0: { slidesPerView: 1.1, spaceBetween: 10 },
@@ -432,7 +434,8 @@ function FeatureCarousel() {
               <div className="item">
                 <div className="services-one__single">
                   <div className="services-one__icon">
-                    <span className={service.iconClass}></span>
+                    <span>{service.icon}</span>
+                    {/* <span className={service.iconClass}></span> */}
                   </div>
                   <h3 className="services-one__title">
                     <Link to={'/services'}>
@@ -444,7 +447,7 @@ function FeatureCarousel() {
                       ))}
                     </Link>
                   </h3>
-                  <p className="services-one__single-text">{service.text}</p>
+                  {/* <p className="services-one__single-text">{service.text}</p> */}
                   <Link to={'/services'} className="services-one__read-more">
                     Learn More<span className="icon-arrow-right"></span>
                   </Link>

@@ -4,7 +4,8 @@
 .main-slider {
   position: relative;
   display: block;
-  background-color: var(--fixpro-black);
+  /* background-color: var(--fixpro-black); */
+  background-color: #062f2f;
   z-index: 10;
 }
 

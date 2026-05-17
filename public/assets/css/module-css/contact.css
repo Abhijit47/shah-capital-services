@@ -593,7 +593,7 @@
 .contact-page__input-box input[type='number'] {
   height: 57px;
   width: 100%;
-  background-color: #00273a;
+  /* background-color: #00273a; */
   border: 1px solid rgba(var(--fixpro-white-rgb), 0.1);
   padding-left: 20px;
   padding-right: 20px;
@@ -612,7 +612,7 @@
 .contact-page__input-box .nice-select {
   height: 57px;
   width: 100%;
-  background-color: #00273a;
+  /* background-color: #00273a; */
   border: 1px solid rgba(var(--fixpro-white-rgb), 0.1);
   padding-left: 20px;
   padding-right: 20px;
@@ -631,7 +631,7 @@
   color: var(--fixpro-gray);
   height: 175px;
   width: 100%;
-  background-color: #00273a;
+  /* background-color: #00273a; */
   border: 1px solid rgba(var(--fixpro-white-rgb), 0.1);
   padding: 15px 20px 30px;
   border-radius: 20px;

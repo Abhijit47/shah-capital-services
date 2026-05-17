@@ -4,6 +4,7 @@ import { ZohoServiceForm } from '#/components/convert.tsx'
 import Banner from '#/features/banner/Banner'
 import type { AnimationVariant } from '@/components/elements/FadeInAdvanced'
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced'
+import type { ReactNode } from 'react'
 import { useState } from 'react'
 
 export const Route = createFileRoute('/services/')({
@@ -41,6 +42,7 @@ function RouteComponent() {
 
 interface ServiceItem {
   id: number
+  icon: ReactNode
   iconClass: string
   subTitle: string
   title: string
@@ -54,6 +56,7 @@ interface ServiceItem {
 export const servicesData: ServiceItem[] = [
   {
     id: 1,
+    icon: <i className="fa-solid fa-circle-dollar-to-slot"></i>,
     iconClass: 'icon-socket',
     subTitle: 'Service Type 1',
     title: 'Mutual Funds',
@@ -82,6 +85,7 @@ aligned with your financial future.`,
   },
   {
     id: 2,
+    icon: <i className="fa-solid fa-money-bill-trend-up"></i>,
     iconClass: 'icon-ceiling-lamp',
     subTitle: 'Service Type 2',
     title: 'Stocks & Securities',
@@ -107,6 +111,7 @@ creation, and structured financial planning tailored to each investor’s financ
   },
   {
     id: 3,
+    icon: <i className="fa fa-car-burst"></i>,
     iconClass: 'icon-ceiling-lamp-2',
     subTitle: 'Service Type 3',
     title: 'Insurance',
@@ -136,6 +141,7 @@ specific needs and financial goals.`,
   },
   {
     id: 4,
+    icon: <i className="fa-solid fa-gifts"></i>,
     iconClass: 'icon-laptop',
     subTitle: 'Service Type 4',
     title: 'Gift City',
@@ -160,6 +166,7 @@ financial goals, risk appetite, and long-term wealth strategy.`,
   },
   {
     id: 5,
+    icon: <i className="fa-solid fa-piggy-bank"></i>,
     iconClass: 'icon-ac1',
     subTitle: 'Service Type 5',
     title: 'Fixed Deposit',
@@ -188,6 +195,7 @@ investment support designed around your financial objectives and liquidity prefe
   },
   {
     id: 6,
+    icon: <i className="fa-solid fa-bed-pulse"></i>,
     iconClass: 'icon-air-conditioning',
     subTitle: 'Service Type 6',
     title: 'Life Insurance',
@@ -199,6 +207,7 @@ investment support designed around your financial objectives and liquidity prefe
   },
   {
     id: 7,
+    icon: <i className="fa-solid fa-briefcase-medical"></i>,
     iconClass: 'icon-air-conditioning',
     subTitle: 'Service Type 7',
     title: 'Health Insurance',
@@ -229,7 +238,8 @@ const ServicesSec: React.FC = () => {
               >
                 <div className="services-three__single">
                   <div className="services-three__icon">
-                    <span className={service.iconClass}></span>
+                    <span>{service.icon}</span>
+                    {/* <span className={service.iconClass}></span> */}
                   </div>
                   <p className="services-three__sub-title">
                     {service.subTitle}

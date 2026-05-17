@@ -62,11 +62,12 @@ const Contact: React.FC = () => {
                 <h3>
                   <a
                     title="Our Location"
-                    href="https://maps.app.goo.gl/t5ec3D5DNHPP95WEA"
+                    href="https://maps.app.goo.gl/bntg6fuaKdHhdkLZ6"
                     target={'_blank'}
                     rel="noopener noreferrer"
                   >
-                    Chennai, India - 600001
+                    Old no. 477, Mint Street, Kondithope, Chennai, Tamil Nadu,
+                    600001, India
                   </a>
                 </h3>
               </div>
@@ -88,7 +89,7 @@ const Contact: React.FC = () => {
 
                   <iframe
                     title="our location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248431.88669008325!2d80.04386040633084!3d13.047807811525526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e1!3m2!1sen!2sin!4v1778254864755!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.9067737855!2d80.27506457940162!3d13.101293579107441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526f5ee4a4f2c3%3A0x994e07b8efb5b1da!2s477%2C%20Mint%20St%2C%20Kondithope%2C%20George%20Town%2C%20Chennai%2C%20Tamil%20Nadu%20600001!5e1!3m2!1sen!2sin!4v1778999956161!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
