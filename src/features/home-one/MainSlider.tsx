@@ -7,6 +7,7 @@ import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 // import shape from '/assets/images/shapes/main-slider-shape-1.png'
 // import shapeTwo from '/assets/images/shapes/main-slider-shape-2.png'
+import MarqueeSlider from '#/components/elements/MarqueeSlider.tsx'
 import shape from '/hero-icon-1.png'
 import shapeTwo from '/hero-icon-2.png'
 
@@ -48,26 +49,26 @@ const MainSlider: React.FC = () => {
         <div className={'row px-4'}>
           <div className="container col-12">
             <div className="main-slider__content">
-              <div className="main-slider__sub-title-box justify-content-center">
+              {/* <div className="main-slider__sub-title-box justify-content-center">
                 <div className="main-slider__sub-title-shape"></div>
                 <p className="main-slider__sub-title">
                   Find the Best support you need today.
                 </p>
-              </div>
+              </div> */}
               <h2 className="main-slider__title text-center">
                 Your <span>financial</span> life <br /> <span>managed.</span>
               </h2>
-              <p className="main-slider__text text-center">
+              {/* <p className="main-slider__text text-center">
                 We help companies develop powerful corporate social
                 responsibility, grantmaking, <br /> and employee engagement
                 strategies. Dicta sunt explicabo. Nemo
-              </p>
+              </p> */}
               <div className="main-slider__btn-box">
-                <div className="main-slider__btn">
+                {/* <div className="main-slider__btn">
                   <Link to="/about" className="thm-btn">
                     Discover More <span className="icon-arrow-right"></span>
                   </Link>
-                </div>
+                </div> */}
                 <div className="main-slider__video-link">
                   <a
                     title="watch video"
@@ -91,6 +92,7 @@ const MainSlider: React.FC = () => {
           </div>
           <div className={'col-12'}>
             <FeatureCarousel />
+            <SlidingService />
           </div>
         </div>
       </div>
@@ -458,5 +460,56 @@ function FeatureCarousel() {
         </Swiper>
       </div>
     </div>
+  )
+}
+
+export type SecProp = {
+  secClass?: string
+}
+
+const SlidingService: React.FC<SecProp> = ({ secClass }) => {
+  return (
+    <section className={`sliding-text ${secClass}`}>
+      <div className="sliding-text__inner">
+        {/* <ul className="sliding-text__list marquee_mode-1 list-unstyled"> */}
+        <MarqueeSlider mode="1" className="sliding-text__list">
+          {servicesData.map((service) => (
+            <div key={service.id}>
+              <div className="item">
+                <div
+                  className="services-one__single"
+                  style={{
+                    // aspectRatio: 1,
+                    width: '200px',
+                    height: '260px',
+                    marginRight: '10px',
+                  }}
+                >
+                  <div className="services-one__icon">
+                    <span>{service.icon}</span>
+                    {/* <span className={service.iconClass}></span> */}
+                  </div>
+                  <h3 className="services-one__title">
+                    <Link to={'/services'}>
+                      {service.title.split('\n').map((line, i, arr) => (
+                        <Fragment key={i}>
+                          {line}
+                          {i < arr.length - 1 && <br />}
+                        </Fragment>
+                      ))}
+                    </Link>
+                  </h3>
+                  {/* <p className="services-one__single-text">{service.text}</p> */}
+                  <Link to={'/services'} className="services-one__read-more">
+                    Learn More<span className="icon-arrow-right"></span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </MarqueeSlider>
+        {/* </ul> */}
+      </div>
+    </section>
   )
 }

@@ -121,22 +121,30 @@ const FooterOne: React.FC = () => {
           <div className="row">
             {/* About Column */}
             <FadeInAdvanced className="col-xl-3" variant="fadeInUp" delay={100}>
-              <div className="footer-widget__column footer-widget__about">
+              <div
+                className="footer-widget__column footer-widget__about pt-0"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '100%',
+                }}
+              >
                 <div className="footer-widget__logo">
                   <Link to="/">
                     <img
                       // src={'logo-landscape-2.png'}
                       src={'footer-logo.png'}
-                      width={'100%'}
-                      height={'100%'}
-                      alt="Fixpro Logo"
+                      width={'100px'}
+                      height={'100px'}
+                      alt="Logo"
                     />
                   </Link>
                 </div>
-                <p className="footer-widget__about-text">
+                {/* <p className="footer-widget__about-text">
                   Secure other greater pleasures, or else he endures pains to
                   avoid worse pains selection
-                </p>
+                </p> */}
                 {/* <div className="footer-widget__working-box">
                   <h3 className="footer-widget__working-title">
                     Working Hours:
@@ -156,10 +164,10 @@ const FooterOne: React.FC = () => {
             </FadeInAdvanced>
 
             {/* Right Columns */}
-            <div className="col-xl-9">
+            <div className="col-xl-9 pt-4">
               <div className="footer-widget__right">
                 {/* Newsletter */}
-                <div className="footer-widget__column footer-widget__newsletter">
+                {/* <div className="footer-widget__column footer-widget__newsletter">
                   <div className="footer-widget__newsletter-bg"></div>
                   <h3 className="footer-widget__newsletter-title">
                     Subscribe To Our Newsletter To
@@ -183,7 +191,7 @@ const FooterOne: React.FC = () => {
                       Subscribe
                     </button>
                   </form>
-                </div>
+                </div> */}
 
                 <div className="footer-widget__right-bottom">
                   <div className="row">
@@ -303,7 +311,7 @@ const FooterOne: React.FC = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="site-footer__bottom">
+      {/* <div className="site-footer__bottom">
         <div className="container">
           <div className="site-footer__bottom-inner">
             <p className="site-footer__bottom-text">
@@ -319,7 +327,7 @@ const FooterOne: React.FC = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
     </footer>
   )
 }

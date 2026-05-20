@@ -1,5 +1,5 @@
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced'
-import TextAnimation from '@/components/elements/TextAnimation'
+// import TextAnimation from '@/components/elements/TextAnimation'
 import type { ReactNode } from 'react'
 import processTwoShape1 from '/assets/images/shapes/process-two-shape-1.png'
 
@@ -57,12 +57,12 @@ export default function HowWeWork() {
             <span className="section-title__tagline-border"></span>
             How we work
           </h6>
-          <h3 className="section-title__title title-animation">
+          {/* <h3 className="section-title__title title-animation">
             <TextAnimation>
               We use the most effective methods
               <br /> to build a brand
             </TextAnimation>
-          </h3>
+          </h3> */}
         </div>
 
         <div className="process-two__inner">

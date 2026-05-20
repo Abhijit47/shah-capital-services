@@ -96,6 +96,7 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               required
+              style={{ backgroundColor: 'var(--swal2-footer-border-color)' }}
             />
           </div>
         </div>
@@ -108,6 +109,7 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
+              style={{ backgroundColor: 'var(--swal2-footer-border-color)' }}
             />
           </div>
         </div>
@@ -119,6 +121,7 @@ export default function ContactForm() {
               placeholder="Phone"
               value={formData.phone}
               onChange={handleChange}
+              style={{ backgroundColor: 'var(--swal2-footer-border-color)' }}
             />
           </div>
         </div>
@@ -130,6 +133,7 @@ export default function ContactForm() {
               placeholder="Subject"
               value={formData.subject}
               onChange={handleChange}
+              style={{ backgroundColor: 'var(--swal2-footer-border-color)' }}
             />
           </div>
         </div>
@@ -140,6 +144,7 @@ export default function ContactForm() {
               placeholder="Message"
               value={formData.message}
               onChange={handleChange}
+              style={{ backgroundColor: 'var(--swal2-footer-border-color)' }}
             ></textarea>
           </div>
           <div className="contact-page__btn-box">

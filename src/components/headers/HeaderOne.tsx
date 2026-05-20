@@ -40,7 +40,7 @@ function HeaderOne() {
   return (
     <>
       <header className="main-header" ref={headerRef}>
-        <div className="main-menu__top">
+        {/* <div className="main-menu__top">
           <div className="main-menu__top-inner">
             <ul className="list-unstyled main-menu__contact-list">
               <li>
@@ -97,12 +97,12 @@ function HeaderOne() {
               Welcome to Our Fixpro Office
             </p>
             <div className="main-menu__top-right">
-              {/* <div className="main-menu__top-time">
+              <div className="main-menu__top-time">
                 <div className="main-menu__top-time-icon">
                   <span className="icon-clock"></span>
                 </div>
                 <p className="main-menu__top-text">Mon - Fri: 09:00 - 05:00</p>
-              </div> */}
+              </div>
               <div className="main-menu__social">
                 <a href="#" title="Twitter">
                   <i className="fab fa-twitter"></i>
@@ -119,7 +119,7 @@ function HeaderOne() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <nav className="main-menu">
           {/* <ClientOnly fallback={null}> */}
           <MenuOne />

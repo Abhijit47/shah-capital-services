@@ -7,7 +7,7 @@ import useFixproContext from '@/components/context/useFixproContext'
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced'
 import SectionWrapper from '@/components/elements/SectionWrapper'
 import TextAnimation from '@/components/elements/TextAnimation'
-import { ClientOnly, Link } from '@tanstack/react-router'
+import { ClientOnly } from '@tanstack/react-router'
 
 // interface PointItem {
 //   id: number
@@ -103,34 +103,34 @@ const AboutOne: React.FC<SecProp> = ({ secClass = '' }) => {
                   </TextAnimation>
                 </h3>
               </div>
-              <hr />
+
               <p className="about-one__text">
                 Our work began in 2005, when we saw a clear gap: too many people
                 were either going it alone with their investments or working
                 with advisors who pushed products instead of building plans.
               </p>
-              <hr />
+
               <p className="about-one__text">
                 We built something different. We do not push products. We sit
                 down, we understand your life - your business, your family, your
                 risks, and your goals and then we take ownership of your
                 financial future.
               </p>
-              <hr />
+
               <p className="about-one__text">
                 Every rupee you invest with us is managed with the discipline of
                 someone who has made your peace of mind their professional
                 responsibility. Today, Shah Capital manages over ₹90 crore
                 across more than 1,300 active investors and 423 family accounts.
               </p>
-              <hr />
+
               <p className="about-one__text">
                 Nearly every new client comes through a referral, because when
                 someone trusts us with their money, they tell the people they
                 care about. That is Shah Capital. Disciplined. Trustworthy.
                 Generational.
               </p>
-              <hr />
+
               {/* <div className="about-one__points-box">
                 <ul className="about-one__points list-unstyled">
                   {pointsData.map((point) => (
@@ -157,11 +157,11 @@ const AboutOne: React.FC<SecProp> = ({ secClass = '' }) => {
                 ))}
               </ul> */}
               <div className="about-one__btn-and-video">
-                <div className="about-one__btn-box">
+                {/* <div className="about-one__btn-box">
                   <Link to="/services" className="thm-btn">
                     Discover More<span className="icon-arrow-right"></span>
                   </Link>
-                </div>
+                </div> */}
                 <div className="about-one__video-box">
                   <div className="about-one__video-link">
                     <span

@@ -8,7 +8,7 @@ import BrandOne from '#/features/home-one/BrandOne'
 // import ServiceOne from '#/features/home-one/ServiceOne'
 // import TeamOne from '#/features/home-one/TeamOne'
 import TestimonialOne from '#/features/home-one/TestimonialOne'
-import DetailsSecOne from '#/features/team/DetailsSecOne.tsx'
+// import DetailsSecOne from '#/features/team/DetailsSecOne.tsx'
 
 export const Route = createFileRoute('/about')({
   head: () => ({
@@ -35,7 +35,7 @@ function About() {
       <div className="page-wrapper">
         <Banner title={title} subTitle={title} />
         <AboutOne secClass="about-page" />
-        <DetailsSecOne />
+        {/* <DetailsSecOne /> */}
         {/* <ServiceOne /> */}
         {/* <ClientOnly fallback={<div>Loading...</div>}> */}
         <SlidingText secClass="sliding-text-twoo" />

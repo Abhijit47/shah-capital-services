@@ -37,7 +37,7 @@ const counterItems: CounterItem[] = [
 
 const CounterOne: React.FC = () => {
   return (
-    <div className={'feature-one pb-0'}>
+    <div className={'feature-one pb-0 p-0'}>
       <JarallaxSection
         className="counter-one process-two"
         imgSrc={counterOneBg}

@@ -71,13 +71,13 @@ const MenuOne: React.FC = () => {
               </Link>
             </div> */}
           </div>
-          <div className="main-menu__nav-sidebar-icon" onClick={handlSidebar}>
+          {/* <div className="main-menu__nav-sidebar-icon" onClick={handlSidebar}>
             <a className="navSidebar-button" href="#" title="navSidebar">
               <span className="icon-dots-menu-one"></span>
               <span className="icon-dots-menu-two"></span>
               <span className="icon-dots-menu-three"></span>
             </a>
-          </div>
+          </div> */}
           <div className="main-menu__btn-box">
             <Link to="/contact" className="thm-btn">
               Get A Quote<span className="icon-arrow-right"></span>

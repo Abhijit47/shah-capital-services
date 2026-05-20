@@ -1,8 +1,8 @@
 import TextAnimation from '@/components/elements/TextAnimation'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import testimonialShape1 from '/assets/images/shapes/testimonial-one-shape-1.png'
-import testimonialShape2 from '/assets/images/shapes/testimonial-one-shape-2.png'
+// import testimonialShape1 from '/assets/images/shapes/testimonial-one-shape-1.png'
+// import testimonialShape2 from '/assets/images/shapes/testimonial-one-shape-2.png'
 import testimonialImg1 from '/assets/images/testimonial/testimonial-1-1.jpg'
 import testimonialImg2 from '/assets/images/testimonial/testimonial-1-2.jpg'
 import testimonialImg3 from '/assets/images/testimonial/testimonial-1-3.jpg'
@@ -45,8 +45,11 @@ const testimonials: Testimonial[] = [
 
 const TestimonialOne: React.FC = () => {
   return (
-    <section className="testimonial-one">
-      <div className="testimonial-one__bg"></div>
+    <section
+      className="testimonial-one pt-2"
+      style={{ background: 'transparent' }}
+    >
+      {/* <div className="testimonial-one__bg"></div>
       <div className="testimonial-one__shape-1 float-bob-x">
         <img
           src={testimonialShape1}
@@ -60,13 +63,18 @@ const TestimonialOne: React.FC = () => {
           style={{ width: 'auto', height: 'auto' }}
           alt="shape 2"
         />
-      </div>
+      </div> */}
       <div className="container">
         <div className="section-title text-center sec-title-animation animation-style1">
           <h6 className="section-title__tagline">
             <span className="section-title__tagline-border"></span>Testimonials
           </h6>
-          <h3 className="section-title__title title-animation">
+          <h3
+            className="section-title__title title-animation"
+            style={{
+              color: 'var(--fixpro-black)',
+            }}
+          >
             <TextAnimation animationStyle="style2">
               What Our Customer Says?
             </TextAnimation>
