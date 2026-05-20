@@ -98,6 +98,9 @@ export const Route = createRootRoute({
           'sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y',
         crossOrigin: 'anonymous',
       },
+      // {
+      //   src: 'https://api.anvevoice.app/functions/v1/voice-assistant-embed-js?embedId=d81232eb-2a39-4bfb-985f-0461027baf07&position=bottom-right&theme=light',
+      // },
     ],
   }),
   shellComponent: RootDocument,
@@ -143,6 +146,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           ]}
         />
         <Scripts />
+        <script src="https://api.anvevoice.app/functions/v1/voice-assistant-embed-js?embedId=d81232eb-2a39-4bfb-985f-0461027baf07&position=bottom-right&theme=light"></script>
       </body>
     </html>
   )
