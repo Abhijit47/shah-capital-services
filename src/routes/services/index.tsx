@@ -1,11 +1,11 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 
 import { ZohoServiceForm } from '#/components/convert.tsx'
 import Banner from '#/features/banner/Banner'
 import type { AnimationVariant } from '@/components/elements/FadeInAdvanced'
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced'
 import type { ReactNode } from 'react'
-import { useState } from 'react'
+// import { useState } from 'react'
 
 export const Route = createFileRoute('/services/')({
   head: () => ({
@@ -105,7 +105,7 @@ investment platforms designed to simplify investing and long-term portfolio mana
 creation, and structured financial planning tailored to each investor’s financial objectives.`,
       `Build a structured equity portfolio with guidance from Shah Capital Services.`,
     ],
-    path: '/services/stocks-securities',
+    path: '/services/stocks-and-securities',
     animationClass: 'fadeInUp',
     animationDelay: 300,
   },
@@ -220,9 +220,9 @@ investment support designed around your financial objectives and liquidity prefe
 ]
 
 const ServicesSec: React.FC = () => {
-  const [selectedService, setSelectedService] = useState<ServiceItem | null>(
-    null,
-  )
+  // const [selectedService, setSelectedService] = useState<ServiceItem | null>(
+  //   null,
+  // )
 
   return (
     <>
@@ -245,17 +245,24 @@ const ServicesSec: React.FC = () => {
                     {service.subTitle}
                   </p>
                   <h3 className="services-three__title">
-                    <a
+                    <Link to={service.path}>{service.title}</Link>
+                    {/* <a
                       role={'button'}
                       data-bs-toggle="modal"
                       data-bs-target="#serviceModal"
                       onClick={() => setSelectedService(service)}
                     >
                       {service.title}
-                    </a>
+                    </a> */}
                   </h3>
                   <p className="services-three__text">{service.text}</p>
-                  <a
+                  <Link
+                    to={service.path}
+                    className="services-three__learn-more"
+                  >
+                    Learn More<span className="icon-arrow-right"></span>
+                  </Link>
+                  {/* <a
                     className="services-three__learn-more"
                     role={'button'}
                     data-bs-toggle="modal"
@@ -263,7 +270,7 @@ const ServicesSec: React.FC = () => {
                     onClick={() => setSelectedService(service)}
                   >
                     Learn More<span className="icon-arrow-right"></span>
-                  </a>
+                  </a> */}
                 </div>
               </FadeInAdvanced>
             ))}
@@ -271,12 +278,12 @@ const ServicesSec: React.FC = () => {
         </div>
       </section>
 
-      <ServiceModal service={selectedService} />
+      {/* <ServiceModal service={selectedService} /> */}
     </>
   )
 }
 
-function ServiceModal({ service }: { service: ServiceItem | null }) {
+export function ServiceModal({ service }: { service: ServiceItem | null }) {
   return (
     <div
       className="modal fade"

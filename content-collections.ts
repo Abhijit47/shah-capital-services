@@ -162,8 +162,24 @@ const services = defineCollection({
     slug: z.string(),
     summary: z.string(),
     image: z.string(),
+    lastModified: z.string(),
     draft: z.boolean().default(false),
   }),
+  transform: async (document, context) => {
+    if (document.draft) {
+      return context.skip('document is a draft')
+    }
+
+    const mdx = await compileMDX(context, document, {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeSlug],
+    })
+
+    return {
+      ...document,
+      mdx,
+    }
+  },
 })
 
 const posts = defineCollection({

@@ -10,7 +10,8 @@
 }
 
 .page-header__bg {
-  background-image: url('/assets/images/backgrounds/page-header-bg.jpg');
+  /* background-image: url('/assets/images/backgrounds/page-header-bg.jpg'); */
+  background-image: url('/page-banner.jpg');
   position: absolute;
   top: 0;
   left: 0;

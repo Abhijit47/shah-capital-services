@@ -7,7 +7,7 @@ import Banner from '#/features/banner/Banner.tsx'
 // import BlogSidebar from '#/features/blog/BlogSidebar.tsx'
 import FadeInAdvanced from '#/components/elements/FadeInAdvanced.tsx'
 import { formattedDate } from '#/lib/utls.ts'
-import BlogDetailsImg1 from '/assets/images/blog/blog-details-img-1.jpg'
+// import BlogDetailsImg1 from '/assets/images/blog/blog-details-img-1.jpg'
 
 export const Route = createFileRoute('/blogs/$slug')({
   beforeLoad: ({ params }) => {
@@ -40,7 +40,8 @@ function BlogDetails() {
               <div className="blog-details__left">
                 <div className="blog-details__img">
                   <img
-                    src={BlogDetailsImg1}
+                    // src={BlogDetailsImg1}
+                    src={blog.image}
                     width={850}
                     height={509}
                     alt="Image"
@@ -151,7 +152,8 @@ const BlogSidebar: React.FC<BlogSidebar> = ({ wrapper, inner }) => {
               <div className="sidebar__post-single" key={blog._meta.path}>
                 <div className="sidebar-post__img">
                   <img
-                    src={'/assets/images/blog/blog-details-img-1.jpg'}
+                    // src={'/assets/images/blog/blog-details-img-1.jpg'}
+                    src={blog.image}
                     width={350}
                     height={140}
                     alt="Image"
