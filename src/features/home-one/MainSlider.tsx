@@ -41,6 +41,22 @@ const MainSlider: React.FC = () => {
           />
         </div>
 
+        <div className="main-slider__shape-3 float-bob-y">
+          <img
+            src={shape}
+            style={{ width: 'auto', height: 'auto' }}
+            alt="shapeImage"
+          />
+        </div>
+
+        <div className="main-slider__shape-4 float-bob-x">
+          <img
+            src={shape}
+            style={{ width: 'auto', height: 'auto' }}
+            alt="shapeImage"
+          />
+        </div>
+
         {/* BACKGROUND */}
         {/* <div className="main-slider__bg-box">
           <div className="main-slider__bg one"></div>
@@ -91,7 +107,7 @@ const MainSlider: React.FC = () => {
             </div>
           </div>
           <div className={'col-12'}>
-            <FeatureCarousel />
+            {/* <FeatureCarousel /> */}
             <SlidingService />
           </div>
         </div>
@@ -402,7 +418,7 @@ Mutual Funds, Stocks & Securities, NRI - GIFT City,  Fixed Deposits, Life Insura
 
 const isDev = import.meta.env.DEV
 
-function FeatureCarousel() {
+export function FeatureCarousel() {
   return (
     <div
     // className="services-one__right"
@@ -470,7 +486,10 @@ export type SecProp = {
 const SlidingService: React.FC<SecProp> = ({ secClass }) => {
   return (
     <section className={`sliding-text ${secClass}`}>
-      <div className="sliding-text__inner">
+      <div
+        className="sliding-text__inner"
+        style={{ background: 'transparent' }}
+      >
         {/* <ul className="sliding-text__list marquee_mode-1 list-unstyled"> */}
         <MarqueeSlider mode="1" className="sliding-text__list">
           {servicesData.map((service) => (
@@ -480,7 +499,7 @@ const SlidingService: React.FC<SecProp> = ({ secClass }) => {
                   className="services-one__single"
                   style={{
                     // aspectRatio: 1,
-                    width: '200px',
+                    width: '260px',
                     height: '260px',
                     marginRight: '10px',
                   }}

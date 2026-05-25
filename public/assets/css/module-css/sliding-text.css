@@ -11,6 +11,7 @@
   position: relative;
   display: block;
   background-color: var(--fixpro-black);
+  /* background-color: transparent; */
   padding: 35px 0 35px;
 }
 
