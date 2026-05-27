@@ -12,6 +12,7 @@ import blogShape2 from '/assets/images/shapes/blog-one-shape-2.png'
 import SectionWrapper from '@/components/elements/SectionWrapper'
 // import { blogOnePosts } from '@/contents/blog/blogData'
 import Calculators from '#/components/calc/Calculators.tsx'
+import AllProducts from '#/features/products/AllProducts'
 import { allPosts } from 'content-collections'
 
 export const Route = createFileRoute('/knowledge-hub')({
@@ -52,6 +53,16 @@ function RouteComponent() {
     <main>
       <div className="page-wrapper">
         <Banner title={title} subTitle={title} />
+
+        <TeamOne />
+
+        <section className="product">
+          <div className="container">
+            <div className="row">
+              <AllProducts />
+            </div>
+          </div>
+        </section>
 
         <Calculators />
 
@@ -141,5 +152,117 @@ function RouteComponent() {
         </SectionWrapper>
       </div>
     </main>
+  )
+}
+
+interface TeamMember {
+  id: number
+  name: string
+  role: string
+  image: string
+  animationDirection: 'fadeInLeft' | 'fadeInRight'
+  animationDelay: number
+}
+
+const teamMembers: TeamMember[] = [
+  {
+    id: 1,
+    name: 'Adam Smith',
+    role: 'Technician',
+    image: '/assets/images/team/team-1-4.jpg',
+    animationDirection: 'fadeInLeft',
+    animationDelay: 100,
+  },
+  {
+    id: 2,
+    name: 'Harbert Spin',
+    role: 'Technician',
+    image: '/assets/images/team/team-1-4.jpg',
+    animationDirection: 'fadeInLeft',
+    animationDelay: 300,
+  },
+  {
+    id: 3,
+    name: 'Robert Son',
+    role: 'Technician',
+    image: '/assets/images/team/team-1-4.jpg',
+    animationDirection: 'fadeInRight',
+    animationDelay: 500,
+  },
+  {
+    id: 4,
+    name: 'Alisha Martin',
+    role: 'Technician',
+    image: '/assets/images/team/team-1-4.jpg',
+    animationDirection: 'fadeInRight',
+    animationDelay: 700,
+  },
+]
+
+function TeamOne() {
+  return (
+    <SectionWrapper id="team" className="team-one">
+      <div className="container">
+        <div className="section-title text-center sec-title-animation animation-style1">
+          <h6 className="section-title__tagline">
+            <span className="section-title__tagline-border"></span>Expert Team
+          </h6>
+          <h3 className="section-title__title title-animation">
+            <TextAnimation animationStyle="style2">
+              Meet The Expert Team Member
+            </TextAnimation>
+          </h3>
+        </div>
+        <div className="row">
+          {teamMembers.map((member) => (
+            <FadeInAdvanced
+              key={member.id}
+              className="col-xl-3 col-lg-6 col-md-6"
+              variant={member.animationDirection}
+              delay={member.animationDelay}
+            >
+              <div className="team-one__single">
+                <div className="team-one__img-box">
+                  <div className="team-one__img">
+                    <img src={member.image} width={278} alt={member.name} />
+                  </div>
+                </div>
+                <div className="team-one__content">
+                  <div className="team-one__title-box">
+                    <h3 className="team-one__title">
+                      <a href="/team-details">{member.name}</a>
+                    </h3>
+                    <div className="team-one__sub-title">{member.role}</div>
+                  </div>
+                  <div className="team-one__share-and-social">
+                    <button
+                      className="team-one__share"
+                      title="Know More"
+                      style={{ border: 'none' }}
+                    >
+                      <span className="fas fa-plus"></span>
+                    </button>
+                    {/* <div className="team-one__social">
+                      <a href="#" title="Facebook">
+                        <span className="icon-facebook"></span>
+                      </a>
+                      <a href="#" title="Instagram">
+                        <span className="icon-instagram"></span>
+                      </a>
+                      <a href="#" title="LinkedIn">
+                        <span className="icon-link-in"></span>
+                      </a>
+                      <a href="#" title="Twitter">
+                        <span className="icon-xpa"></span>
+                      </a>
+                    </div> */}
+                  </div>
+                </div>
+              </div>
+            </FadeInAdvanced>
+          ))}
+        </div>
+      </div>
+    </SectionWrapper>
   )
 }

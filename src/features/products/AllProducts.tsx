@@ -28,7 +28,7 @@ const AllProducts: React.FC = () => {
   }
 
   return (
-    <div className="col-xl-9 col-lg-12">
+    <div className="col-xl-12 col-lg-12">
       <div className="product__items">
         <div className="row">
           <div className="col-xl-12">
