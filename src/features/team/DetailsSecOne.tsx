@@ -198,7 +198,6 @@ const DetailsSecOne: React.FC = () => {
                   financial services should be built on honesty, discipline, and
                   long-term thinking.
                 </p>
-                <hr />
                 <p className="team-details__bottom-text">
                   The journey began with a clear observation: many individuals
                   don’t lack opportunities, but often lack clarity and structure
@@ -206,14 +205,12 @@ const DetailsSecOne: React.FC = () => {
                   choices are influenced by noise, short-term trends, or
                   emotion, rather than a well-defined process.
                 </p>
-                <hr />
                 <p className="team-details__bottom-text">
                   This led to a clear direction — to build an approach that is
                   steady, process-driven, and rooted in consistency. The focus
                   has always been on maintaining discipline through market
                   cycles, rather than reacting to them.
                 </p>
-                <hr />
                 <p className="team-details__bottom-text">
                   Over time, this philosophy has shaped how Shah Capital
                   Services operates — with an emphasis on clarity, structured
@@ -221,14 +218,12 @@ const DetailsSecOne: React.FC = () => {
                   follow trends, but to remain aligned with a defined approach,
                   even when it requires patience.
                 </p>
-                <hr />
                 <p className="team-details__bottom-text">
                   In an industry that can sometimes lean toward short-term
                   thinking, Shah Capital Services is positioned with a different
                   mindset — grounded in process, guided by conviction, and
                   anchored in a long-term perspective.
                 </p>
-                <hr />
                 <div className="team-details__practice-area">
                   <h4 className="team-details__practice-area-title">
                     Services We Provide

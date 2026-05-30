@@ -1,7 +1,7 @@
 import CounterUp from '@/components/elements/CounterUp'
 import JarallaxSection from '@/components/elements/JarallaxSection'
 import { ClientOnly } from '@tanstack/react-router'
-import counterOneBg from '/assets/images/backgrounds/counter-one-bg.jpg'
+// import counterOneBg from '/assets/images/backgrounds/counter-one-bg.jpg'
 
 interface CounterItem {
   id: number
@@ -40,7 +40,10 @@ const CounterOne: React.FC = () => {
     <div className={'feature-one pb-0 p-0'}>
       <JarallaxSection
         className="counter-one process-two"
-        imgSrc={counterOneBg}
+        // imgSrc={counterOneBg}
+        imgSrc={
+          'https://images.unsplash.com/photo-1707157284454-553ef0a4ed0d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        }
         overlayOpacity={0.8}
       >
         <div className="container mx-auto">

@@ -9,7 +9,7 @@ import ProductListView from './ProductListView'
 const AllProducts: React.FC = () => {
   const [sortValue, setSortValue] = useState<string>('Sort by popular')
 
-  const [isGrid, setGrid] = useState<boolean>(true)
+  const [isGrid, setGrid] = useState<boolean>(false)
 
   const [currentPage, setCurrentPage] = useState(1)
   const ITEMS_PER_PAGE = 12

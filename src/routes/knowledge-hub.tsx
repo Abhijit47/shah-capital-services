@@ -13,6 +13,7 @@ import SectionWrapper from '@/components/elements/SectionWrapper'
 // import { blogOnePosts } from '@/contents/blog/blogData'
 import Calculators from '#/components/calc/Calculators.tsx'
 import AllProducts from '#/features/products/AllProducts'
+import { classNames, formattedDate } from '#/lib/utls'
 import { allPosts } from 'content-collections'
 
 export const Route = createFileRoute('/knowledge-hub')({
@@ -81,7 +82,8 @@ function RouteComponent() {
               </h6>
               <h3 className="section-title__title title-animation">
                 <TextAnimation>
-                  Your Brightest Choice <br /> in Repairs
+                  {/* Your Brightest Choice <br /> in Repairs */}
+                  Our Latest Blogs and News Updates
                 </TextAnimation>
               </h3>
             </div>
@@ -97,7 +99,8 @@ function RouteComponent() {
                     <div className="blog-one__img-box">
                       <div className="blog-one__img">
                         <img
-                          src={'/assets/images/blog/blog-2-1.jpg'}
+                          // src={'/assets/images/blog/blog-2-1.jpg'}
+                          src={blog.image}
                           width={410}
                           height={240}
                           alt={blog.title}
@@ -113,9 +116,7 @@ function RouteComponent() {
                         </div>
                       </div>
                       <div className="blog-one__date">
-                        <p>
-                          {12} <br /> {'nov'}
-                        </p>
+                        <p>{formattedDate(blog.createdAt)}</p>
                       </div>
                     </div>
                     <div className="blog-one__content">
@@ -135,7 +136,7 @@ function RouteComponent() {
                       </ul>
                       <h3 className="blog-one__title">
                         <Link to="/blogs/$slug" params={{ slug: blog.slug }}>
-                          {blog.title}
+                          {blog.title.slice(0, 45)}...
                         </Link>
                       </h3>
                       <div className="blog-one__read-more">
@@ -223,8 +224,25 @@ function TeamOne() {
             >
               <div className="team-one__single">
                 <div className="team-one__img-box">
-                  <div className="team-one__img">
-                    <img src={member.image} width={278} alt={member.name} />
+                  <div
+                    className={classNames(
+                      'team-one__img',
+                      'p-2 p-sm-3 p-md-4 p-lg-5',
+                    )}
+                    style={{ display: 'flex' }}
+                  >
+                    {/* <img src={member.image} width={278} alt={member.name} /> */}
+                    <img
+                      src={'/calculators/SIP-icon.png'}
+                      width={100}
+                      height={100}
+                      alt={member.name}
+                      style={{
+                        height: '100px',
+                        width: '100px',
+                        margin: '0 auto',
+                      }}
+                    />
                   </div>
                 </div>
                 <div className="team-one__content">
@@ -232,7 +250,7 @@ function TeamOne() {
                     <h3 className="team-one__title">
                       <a href="/team-details">{member.name}</a>
                     </h3>
-                    <div className="team-one__sub-title">{member.role}</div>
+                    {/* <div className="team-one__sub-title">{member.role}</div> */}
                   </div>
                   <div className="team-one__share-and-social">
                     <button

@@ -50,7 +50,7 @@ function App() {
   return (
     <main>
       <div className="page-wrapper">
-        <MainSliderTwo />
+        {/* <MainSliderTwo /> */}
         <MainSlider />
         <CounterOne />
         <HowWeWork />
