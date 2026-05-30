@@ -12,7 +12,7 @@ import blogShape2 from '/assets/images/shapes/blog-one-shape-2.png'
 import SectionWrapper from '@/components/elements/SectionWrapper'
 // import { blogOnePosts } from '@/contents/blog/blogData'
 import Calculators from '#/components/calc/Calculators.tsx'
-import AllProducts from '#/features/products/AllProducts'
+// import AllProducts from '#/features/products/AllProducts'
 import { classNames, formattedDate } from '#/lib/utls'
 import { allPosts } from 'content-collections'
 
@@ -55,15 +55,15 @@ function RouteComponent() {
       <div className="page-wrapper">
         <Banner title={title} subTitle={title} />
 
-        <TeamOne />
+        {/* <TeamOne /> */}
 
-        <section className="product">
+        {/* <section className="product">
           <div className="container">
             <div className="row">
               <AllProducts />
             </div>
           </div>
-        </section>
+        </section> */}
 
         <Calculators />
 
@@ -200,7 +200,7 @@ const teamMembers: TeamMember[] = [
   },
 ]
 
-function TeamOne() {
+export function TeamOne() {
   return (
     <SectionWrapper id="team" className="team-one">
       <div className="container">

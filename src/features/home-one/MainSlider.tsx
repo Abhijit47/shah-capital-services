@@ -483,7 +483,7 @@ export type SecProp = {
   secClass?: string
 }
 
-const SlidingService: React.FC<SecProp> = ({ secClass }) => {
+export const SlidingService: React.FC<SecProp> = ({ secClass }) => {
   return (
     <section className={`sliding-text ${secClass}`}>
       <div

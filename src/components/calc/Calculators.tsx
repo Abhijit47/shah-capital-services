@@ -1,3 +1,4 @@
+import { classNames } from '#/lib/utls'
 import type { LucideIcon } from 'lucide-react'
 import {
   ArrowUpRight,
@@ -64,7 +65,7 @@ const CALCS: CalcEntry[] = [
     title: 'SWP Calculator',
     desc: 'Plan steady withdrawals from a corpus.',
     icon: Wallet,
-    image: '/calculators/swp.webp',
+    image: '/calculators/SWP-icon.png',
     subtitle: 'SWP Calculator',
     Component: SwpCalculator,
     animationDirection: 'fadeInRight',
@@ -75,7 +76,7 @@ const CALCS: CalcEntry[] = [
     title: 'Child Education',
     desc: "Fund tomorrow's tuition starting today.",
     icon: GraduationCap,
-    image: '/calculators/education.webp',
+    image: '/calculators/Education-icon.png',
     subtitle: 'Child Education Calculator',
     Component: ChildEducationCalculator,
     animationDirection: 'fadeInRight',
@@ -86,7 +87,7 @@ const CALCS: CalcEntry[] = [
     title: 'Retirement',
     desc: "Estimate the corpus you'll need.",
     icon: Palmtree,
-    image: '/calculators/retirement.webp',
+    image: '/calculators/Retirement-icon.png',
     subtitle: 'Retirement Calculator',
     Component: RetirementCalculator,
     animationDirection: 'fadeInLeft',
@@ -119,7 +120,7 @@ const CALCS: CalcEntry[] = [
     title: 'Goal Planner',
     desc: 'Find the SIP needed to hit a goal.',
     icon: Target,
-    image: '/calculators/goal.webp',
+    image: '/calculators/Goal-icon.png',
     subtitle: 'Goal Planner Calculator',
     Component: GoalPlannerCalculator,
     animationDirection: 'fadeInRight',
@@ -130,7 +131,7 @@ const CALCS: CalcEntry[] = [
     title: 'Inflation',
     desc: "Convert today's money to tomorrow's.",
     icon: Flame,
-    image: '/calculators/inflation.webp',
+    image: '/calculators/Inflation-icon.png',
     subtitle: 'Inflation Calculator',
     Component: InflationCalculator,
     animationDirection: 'fadeInLeft',
@@ -204,23 +205,38 @@ export default function Calculators() {
             {CALCS.map((calculator) => (
               <FadeInAdvanced
                 key={calculator.id}
-                className="col-xl-2 col-lg-6 col-md-6"
+                className="col-xl-3 col-lg-6 col-md-6"
                 variant={calculator.animationDirection}
                 delay={calculator.animationDelay}
               >
                 <div className="team-one__single">
                   <div className="team-one__img-box">
-                    <div className="team-one__img">
+                    <div
+                      className={classNames(
+                        'team-one__img',
+                        'p-2 p-sm-3 p-md-4 p-lg-5 border-0',
+                      )}
+                      style={{ display: 'flex' }}
+                    >
+                      {/* <img src={member.image} width={278} alt={member.name} /> */}
                       <img
                         src={calculator.image}
-                        width={278}
+                        width={100}
+                        height={100}
                         alt={calculator.title}
+                        className="object-fit-contain"
+                        style={{
+                          height: '100px',
+                          width: '100px',
+                          margin: '0 auto',
+                          borderRadius: 0,
+                        }}
                       />
                     </div>
                   </div>
                   <div className="team-one__content">
                     <div className="team-one__title-box">
-                      <h3 className="team-one__title">
+                      <h3 className="team-one__title fs-5">
                         <a href="#">{calculator.title}</a>
                       </h3>
                       {/* <div className="team-one__sub-title">{member.role}</div> */}

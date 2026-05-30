@@ -431,8 +431,10 @@
 
 .main-slider-two .item {
   position: relative;
-  padding-top: 335px;
-  padding-bottom: 250px;
+  /* padding-top: 335px;
+  padding-bottom: 250px; */
+  padding-top: 80px;
+  padding-bottom: 270px;
   background-color: var(--fixpro-black);
   overflow: hidden;
   z-index: 10;

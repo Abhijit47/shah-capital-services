@@ -10,25 +10,27 @@ import TestimonialOne from '#/features/home-one/TestimonialOne'
 // import VideoOne from '#/features/home-one/VideoOne'
 // import WhyChooseOne from '#/features/home-one/WhyChooceOne'
 // import TestimonialsThree from '#/features/home-three/TestimonialsThree.tsx'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 
-import { useState } from 'react'
-import slideImg from '/assets/images/resources/main-slider-two-img-1-1.jpg'
-import slideImgSmall from '/assets/images/resources/main-slider-two-small-img-1-1.jpg'
-import shapeOne from '/assets/images/shapes/main-slider-two-shape-1.png'
+import { Fragment, useState } from 'react'
+// import slideImg from '/assets/images/resources/main-slider-two-img-1-1.jpg'
+// import slideImgSmall from '/assets/images/resources/main-slider-two-small-img-1-1.jpg'
+// import shapeOne from '/assets/images/shapes/main-slider-two-shape-1.png'
 
-import slideImgTwo from '/assets/images/resources/main-slider-two-img-1-2.jpg'
-import slideImgSmallTwo from '/assets/images/resources/main-slider-two-small-img-1-2.jpg'
+// import slideImgTwo from '/assets/images/resources/main-slider-two-img-1-2.jpg'
+// import slideImgSmallTwo from '/assets/images/resources/main-slider-two-small-img-1-2.jpg'
 
-import slideImgThree from '/assets/images/resources/main-slider-two-img-1-3.jpg'
-import slideImgSmallThree from '/assets/images/resources/main-slider-two-small-img-1-3.jpg'
+// import slideImgThree from '/assets/images/resources/main-slider-two-img-1-3.jpg'
+// import slideImgSmallThree from '/assets/images/resources/main-slider-two-small-img-1-3.jpg'
 
 import useFixproContext from '@/components/context/useFixproContext'
 import SectionWrapper from '@/components/elements/SectionWrapper'
 
+import MarqueeSlider from '#/components/elements/MarqueeSlider'
 import type { Swiper as SwiperType } from 'swiper'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { servicesData } from './services'
 
 export const Route = createFileRoute('/')({
   head: () => ({
@@ -50,7 +52,7 @@ function App() {
   return (
     <main>
       <div className="page-wrapper">
-        {/* <MainSliderTwo /> */}
+        <MainSliderTwo />
         <MainSlider />
         <CounterOne />
         <HowWeWork />
@@ -83,7 +85,10 @@ const MainSliderTwo: React.FC = () => {
   }
   return (
     <SectionWrapper id="home" className="main-slider-two">
-      <div className="main-slider-two__carousel  ">
+      <div
+        className="main-slider-two__carousel position-relative"
+        // style={{ height: '100dvh' }}
+      >
         <Swiper
           modules={[Navigation, Autoplay, Pagination]}
           spaceBetween={0}
@@ -104,7 +109,86 @@ const MainSliderTwo: React.FC = () => {
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           onSwiper={setSwiperInstance}
         >
-          <SwiperSlide>
+          {Array.from({ length: 5 }).map((_, idx) => {
+            return (
+              <SwiperSlide key={crypto.randomUUID()}>
+                <div className={`item ${activeIndex === idx ? 'active' : ''}`}>
+                  <div className="main-slider-two__bg one"></div>
+                  <div className="main-slider-two__overly"></div>
+                  {/* <div className="main-slider-two__shape-1">
+                    <img
+                      src={shapeOne}
+                      style={{ width: 'auto', height: 'auto' }}
+                      alt="image"
+                      className="float-bob-x"
+                    />
+                  </div> */}
+                  {/* <div className="main-slider-two__img">
+                    <img
+                      src={
+                        '/assets/images/resources/main-slider-two-img-1-1.jpg'
+                      }
+                      style={{ width: 'auto', height: 'auto' }}
+                      alt="image"
+                    />
+                  </div>
+                  <div className="main-slider-two__small-img">
+                    <img
+                      src={
+                        '/assets/images/resources/main-slider-two-small-img-1-1.jpg'
+                      }
+                      style={{ width: 'auto', height: 'auto' }}
+                      alt="image"
+                    />
+                  </div> */}
+                  <div
+                    className="container d-flex justify-content-center"
+                    style={{ paddingBottom: '80px' }}
+                  >
+                    <div className="main-slider-two__content d-flex flex-column justify-content-center align-content-center">
+                      <div className="main-slider-two__sub-title-box d-flex justify-content-center">
+                        <div className="main-slider-two__sub-title-shape"></div>
+                        <p className="main-slider-two__sub-title">
+                          Best Finance Services
+                        </p>
+                      </div>
+                      <h2 className="main-slider-two__title text-center">
+                        Because <span>You</span> <br /> Better Things To Do!
+                      </h2>
+                      <p className="main-slider-two__text text-center">
+                        We have been operating for over a decade, providing
+                        top-notch services We have been <br /> operating for
+                        over a decade and delivering exceptional results to our
+                        valued clients.
+                      </p>
+                      <div className="main-slider-two__btn-box justify-content-center">
+                        <div className="main-slider-two__btn">
+                          <a href="/about" className="thm-btn">
+                            Discover More{' '}
+                            <span className="icon-arrow-right"></span>
+                          </a>
+                        </div>
+                        <div className="main-slider-two__video-link">
+                          <a
+                            href="#"
+                            onClick={handleVideo}
+                            className="video-popup"
+                            title="video"
+                          >
+                            <div className="main-slider-two__video-icon">
+                              <span className="fa fa-play"></span>
+                              <i className="ripple"></i>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            )
+          })}
+          {/* <SwiperSlide>
             <div className={`item ${activeIndex === 0 ? 'active' : ''}`}>
               <div className="main-slider-two__bg one"></div>
               <div className="main-slider-two__overly"></div>
@@ -304,9 +388,9 @@ const MainSliderTwo: React.FC = () => {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
-        <div className="owl-nav">
+        {/* <div className="owl-nav">
           <button
             title="prev"
             onClick={() => swiperInstance?.slidePrev()}
@@ -325,6 +409,48 @@ const MainSliderTwo: React.FC = () => {
           >
             <span className="icon-arrow-right"></span>
           </button>
+        </div> */}
+
+        <div
+          className={'position-absolute bottom-0 start-0'}
+          style={{ height: 'fit-content', width: '100%', zIndex: 4 }}
+        >
+          <MarqueeSlider mode="1" className="sliding-text__list">
+            {servicesData.map((service) => (
+              <div key={service.id}>
+                <div className="items">
+                  <div
+                    className="services-one__single"
+                    style={{
+                      // aspectRatio: 1,
+                      width: '220px',
+                      height: '220px',
+                      marginRight: '10px',
+                    }}
+                  >
+                    <div className="services-one__icon">
+                      <span>{service.icon}</span>
+                      {/* <span className={service.iconClass}></span> */}
+                    </div>
+                    <h3 className="services-one__title fs-5">
+                      <Link to={'/services'}>
+                        {service.title.split('\n').map((line, i, arr) => (
+                          <Fragment key={i}>
+                            {line}
+                            {i < arr.length - 1 && <br />}
+                          </Fragment>
+                        ))}
+                      </Link>
+                    </h3>
+                    {/* <p className="services-one__single-text">{service.text}</p> */}
+                    <Link to={'/services'} className="services-one__read-more">
+                      Learn More<span className="icon-arrow-right"></span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </MarqueeSlider>
         </div>
       </div>
     </SectionWrapper>

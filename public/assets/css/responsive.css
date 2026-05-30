@@ -2221,7 +2221,7 @@
 
   .main-slider-two .item {
     padding-top: 165px;
-    padding-bottom: 120px;
+    /* padding-bottom: 120px; */
   }
 
   .main-slider-three__title {
