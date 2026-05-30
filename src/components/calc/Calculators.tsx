@@ -24,7 +24,7 @@ import { SipCalculator } from './calculators/SipCalculator'
 import { SipStepUpCalculator } from './calculators/SipStepUpCalculator'
 import { SwpCalculator } from './calculators/SwpCalculator'
 
-type CalcEntry = {
+export type CalcEntry = {
   id: string
   title: string
   subtitle: string
@@ -42,7 +42,7 @@ const CALCS: CalcEntry[] = [
     title: 'SIP Calculator',
     desc: 'Grow wealth with monthly investments.',
     icon: TrendingUp,
-    image: '/calculators/sip.webp',
+    image: '/calculators/SIP-icon.png',
     subtitle: 'SIP Calculator',
     Component: SipCalculator,
     animationDirection: 'fadeInLeft',
@@ -155,7 +155,7 @@ export default function Calculators() {
             </h3>
           </div>
 
-          <div className="row">
+          {/* <div className="row">
             {CALCS.map((calculator) => (
               <FadeInAdvanced
                 key={calculator.id}
@@ -163,7 +163,6 @@ export default function Calculators() {
                 variant={calculator.animationDirection}
                 delay={calculator.animationDelay}
               >
-                {/* <div className={`col-xl-3 col-lg-6 col-md-6`}> */}
                 <div className="project-one__single">
                   <div className="project-one__img-box">
                     <div className="project-one__img">
@@ -191,18 +190,58 @@ export default function Calculators() {
                       </div>
                     </div>
                     <div className="project-one__content">
-                      {/* <p className="project-one__sub-title">
-                          {calculator.desc}
-                        </p> */}
                       <h3 className="project-one__title">
-                        {/* <a href="/project-details"> */}
                         {calculator.title}
-                        {/* </a> */}
                       </h3>
                     </div>
                   </div>
                 </div>
-                {/* </div> */}
+              </FadeInAdvanced>
+            ))}
+          </div> */}
+
+          <div className="row">
+            {CALCS.map((calculator) => (
+              <FadeInAdvanced
+                key={calculator.id}
+                className="col-xl-3 col-lg-6 col-md-6"
+                variant={calculator.animationDirection}
+                delay={calculator.animationDelay}
+              >
+                <div className="team-one__single">
+                  <div className="team-one__img-box">
+                    <div className="team-one__img">
+                      <img
+                        src={calculator.image}
+                        width={278}
+                        alt={calculator.title}
+                      />
+                    </div>
+                  </div>
+                  <div className="team-one__content">
+                    <div className="team-one__title-box">
+                      <h3 className="team-one__title">
+                        <a href="#">{calculator.title}</a>
+                      </h3>
+                      {/* <div className="team-one__sub-title">{member.role}</div> */}
+                    </div>
+                    <div className="team-one__share-and-social">
+                      <button
+                        className="team-one__share"
+                        style={{ border: 'none' }}
+                        aria-label={`View full image of ${calculator.title}`}
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        title={calculator.title}
+                        onClick={() => {
+                          setSelectedCalculator(calculator)
+                        }}
+                      >
+                        <span className="fas fa-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </FadeInAdvanced>
             ))}
           </div>

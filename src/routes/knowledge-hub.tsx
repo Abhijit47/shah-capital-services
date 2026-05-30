@@ -12,7 +12,6 @@ import blogShape2 from '/assets/images/shapes/blog-one-shape-2.png'
 import SectionWrapper from '@/components/elements/SectionWrapper'
 // import { blogOnePosts } from '@/contents/blog/blogData'
 import Calculators from '#/components/calc/Calculators.tsx'
-import AllProducts from '#/features/products/AllProducts'
 import { allPosts } from 'content-collections'
 
 export const Route = createFileRoute('/knowledge-hub')({
@@ -53,16 +52,6 @@ function RouteComponent() {
     <main>
       <div className="page-wrapper">
         <Banner title={title} subTitle={title} />
-
-        <TeamOne />
-
-        <section className="product">
-          <div className="container">
-            <div className="row">
-              <AllProducts />
-            </div>
-          </div>
-        </section>
 
         <Calculators />
 
@@ -217,7 +206,7 @@ function TeamOne() {
           {teamMembers.map((member) => (
             <FadeInAdvanced
               key={member.id}
-              className="col-xl-3 col-lg-6 col-md-6"
+              className="col-xl-4 col-lg-6 col-md-6"
               variant={member.animationDirection}
               delay={member.animationDelay}
             >
@@ -242,20 +231,6 @@ function TeamOne() {
                     >
                       <span className="fas fa-plus"></span>
                     </button>
-                    {/* <div className="team-one__social">
-                      <a href="#" title="Facebook">
-                        <span className="icon-facebook"></span>
-                      </a>
-                      <a href="#" title="Instagram">
-                        <span className="icon-instagram"></span>
-                      </a>
-                      <a href="#" title="LinkedIn">
-                        <span className="icon-link-in"></span>
-                      </a>
-                      <a href="#" title="Twitter">
-                        <span className="icon-xpa"></span>
-                      </a>
-                    </div> */}
                   </div>
                 </div>
               </div>
