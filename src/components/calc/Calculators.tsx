@@ -204,7 +204,7 @@ export default function Calculators() {
             {CALCS.map((calculator) => (
               <FadeInAdvanced
                 key={calculator.id}
-                className="col-xl-3 col-lg-6 col-md-6"
+                className="col-xl-2 col-lg-6 col-md-6"
                 variant={calculator.animationDirection}
                 delay={calculator.animationDelay}
               >
