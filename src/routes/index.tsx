@@ -4,9 +4,9 @@ import HowWeWork from '#/components/HowWeWork.tsx'
 // import BrandOne from '#/features/home-one/BrandOne'
 import CounterOne from '#/features/home-one/CounterOne'
 // import FeatureOne from '#/features/home-one/FeatureOne'
-import MainSlider from '#/features/home-one/MainSlider'
+// import MainSlider from '#/features/home-one/MainSlider'
 // import ServiceOne from '#/features/home-one/ServiceOne'
-import TestimonialOne from '#/features/home-one/TestimonialOne'
+// import TestimonialOne from '#/features/home-one/TestimonialOne'
 // import VideoOne from '#/features/home-one/VideoOne'
 // import WhyChooseOne from '#/features/home-one/WhyChooceOne'
 // import TestimonialsThree from '#/features/home-three/TestimonialsThree.tsx'
@@ -53,10 +53,10 @@ function App() {
     <main>
       <div className="page-wrapper">
         <MainSliderTwo />
-        <MainSlider />
+        {/* <MainSlider /> */}
         <CounterOne />
         <HowWeWork />
-        <TestimonialOne />
+        {/* <TestimonialOne /> */}
         {/* <TestimonialsThree /> */}
         {/* <FeatureOne /> */}
         {/* <AboutOne /> */}
@@ -423,7 +423,7 @@ const MainSliderTwo: React.FC = () => {
                     className="services-one__single"
                     style={{
                       // aspectRatio: 1,
-                      width: '220px',
+                      width: '240px',
                       height: '220px',
                       marginRight: '10px',
                     }}

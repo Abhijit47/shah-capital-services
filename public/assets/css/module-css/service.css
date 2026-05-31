@@ -87,7 +87,8 @@
   text-align: center;
   background-color: var(--fixpro-white);
   box-shadow: 0px 10px 39.2px 0.8px rgba(0, 0, 0, 0.1);
-  border-radius: var(--fixpro-bdr-radius);
+  /* border-radius: var(--fixpro-bdr-radius); */
+  border-radius: var(--fixpro-bdr-radius) var(--fixpro-bdr-radius) 0 0;
   padding: 30px 26px 44px;
 }
 

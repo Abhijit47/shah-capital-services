@@ -4,10 +4,10 @@ import SlidingText from '#/components/elements/SlidingText'
 import Banner from '#/features/banner/Banner'
 import AboutOne from '#/features/home-one/AboutOne'
 // import BlogOne from '#/features/home-one/BlogOne'
-import BrandOne from '#/features/home-one/BrandOne'
+// import BrandOne from '#/features/home-one/BrandOne'
 // import ServiceOne from '#/features/home-one/ServiceOne'
 // import TeamOne from '#/features/home-one/TeamOne'
-import TestimonialOne from '#/features/home-one/TestimonialOne'
+// import TestimonialOne from '#/features/home-one/TestimonialOne'
 import DetailsSecOne from '#/features/team/DetailsSecOne.tsx'
 
 export const Route = createFileRoute('/about')({
@@ -41,8 +41,8 @@ function About() {
         <SlidingText secClass="sliding-text-twoo" />
         {/* </ClientOnly> */}
         {/* <TeamOne /> */}
-        <BrandOne />
-        <TestimonialOne />
+        {/* <BrandOne /> */}
+        {/* <TestimonialOne /> */}
         {/* <BlogOne /> */}
       </div>
     </main>

@@ -14,13 +14,13 @@ const Contact: React.FC = () => {
             >
               <div
                 className="contact-info__single"
-                style={{
-                  aspectRatio: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
+                // style={{
+                //   aspectRatio: 1,
+                //   display: 'flex',
+                //   flexDirection: 'column',
+                //   alignItems: 'center',
+                //   justifyContent: 'center',
+                // }}
               >
                 <div className="contact-info__icon">
                   <span className="icon-call"></span>
@@ -44,13 +44,13 @@ const Contact: React.FC = () => {
             >
               <div
                 className="contact-info__single"
-                style={{
-                  aspectRatio: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
+                // style={{
+                //   aspectRatio: 1,
+                //   display: 'flex',
+                //   flexDirection: 'column',
+                //   alignItems: 'center',
+                //   justifyContent: 'center',
+                // }}
               >
                 <div className="contact-info__icon">
                   <span className="icon-envelope"></span>
@@ -74,13 +74,13 @@ const Contact: React.FC = () => {
             >
               <div
                 className="contact-info__single"
-                style={{
-                  aspectRatio: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
+                // style={{
+                //   aspectRatio: 1,
+                //   display: 'flex',
+                //   flexDirection: 'column',
+                //   alignItems: 'center',
+                //   justifyContent: 'center',
+                // }}
               >
                 <div className="contact-info__icon">
                   <span className="icon-location"></span>
@@ -93,8 +93,7 @@ const Contact: React.FC = () => {
                     target={'_blank'}
                     rel="noopener noreferrer"
                   >
-                    Old no. 477, Mint Street, Kondithope, Chennai, Tamil Nadu,
-                    600001, India
+                    Chennai, Tamil Nadu, 600001
                   </a>
                 </h3>
               </div>

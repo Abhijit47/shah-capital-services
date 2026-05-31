@@ -232,7 +232,7 @@ const ServicesSec: React.FC = () => {
             {servicesData.map((service) => (
               <FadeInAdvanced
                 key={service.id}
-                className={`col-xl-4 col-lg-4`}
+                className={`col-xl-4 col-lg-6`}
                 variant={service.animationClass}
                 delay={service.animationDelay}
               >

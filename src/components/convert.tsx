@@ -127,67 +127,82 @@ export const ZohoServiceForm: React.FC = () => {
         <input type="hidden" name="zc_gad" value={formData.zc_gad} />
 
         {/* Name Field */}
-        <div className="form-floating mb-3">
-          <input
-            type="text"
-            id="floatingInputName"
-            name="SingleLine"
-            className="form-control"
-            maxLength={255}
-            value={formData.SingleLine}
-            onChange={handleInputChange}
-            placeholder="Ex. Jhon Doe"
-          />
-          <label htmlFor="floatingInputName">Name *</label>
+        <div className="row gap-1 mb-3">
+          <div className="col">
+            <div className="form-floating">
+              <input
+                type="text"
+                id="floatingInputName"
+                name="SingleLine"
+                className="form-control"
+                maxLength={255}
+                value={formData.SingleLine}
+                onChange={handleInputChange}
+                placeholder="Ex. Jhon Doe"
+              />
+              <label htmlFor="floatingInputName">Name *</label>
+            </div>
+          </div>
+          <div className="col">
+            <div className="form-floating">
+              <input
+                className="form-control"
+                placeholder="name@example.com"
+                id="floatingInputPhone"
+                type="text"
+                name="PhoneNumber_countrycode"
+                maxLength={20}
+                value={formData.PhoneNumber_countrycode}
+                onChange={handleInputChange}
+              />
+              <label htmlFor="floatingInputPhone">Mobile *</label>
+            </div>
+          </div>
         </div>
-        <div className="form-floating mb-3">
-          <input
-            className="form-control"
-            placeholder="name@example.com"
-            id="floatingInputPhone"
-            type="text"
-            name="PhoneNumber_countrycode"
-            maxLength={20}
-            value={formData.PhoneNumber_countrycode}
-            onChange={handleInputChange}
-          />
-          <label htmlFor="floatingInputPhone">Mobile *</label>
-        </div>
-        <div className="form-floating mb-3">
-          <input
-            className="form-control"
-            id="floatingInputEmail"
-            placeholder="name@example.com"
-            type="email"
-            name="Email"
-            maxLength={255}
-            value={formData.Email}
-            onChange={handleInputChange}
-          />
-          <label htmlFor="floatingInputEmail">Email address *</label>
-        </div>
-        <div className="form-floating mb-3">
-          <select
-            className="form-select"
-            id="floatingServiceInterest"
-            aria-label="Service Interest"
-            name="Dropdown3"
-            value={formData.Dropdown3}
-            onChange={handleInputChange}
-          >
-            <option value="-Select-">-Select-</option>
-            <option value="Mutual Funds">Mutual Funds</option>
-            <option value="Fixed Deposit">Fixed Deposit</option>
-            <option value="Health Insurance">Health Insurance</option>
-            <option value="Stocks and Securities">Stocks and Securities</option>
-            <option value="Life Insurance">Life Insurance</option>
-            <option value="Vehicle Insurance">Vehicle Insurance</option>
-            <option value="Travel Insurance">Travel Insurance</option>
-            <option value="Miscellaneous Insurance">
-              Miscellaneous Insurance
-            </option>
-          </select>
-          <label htmlFor="floatingServiceInterest">Service Interest</label>
+
+        <div className="row gap-1">
+          <div className="col">
+            <div className="form-floating">
+              <input
+                className="form-control"
+                id="floatingInputEmail"
+                placeholder="name@example.com"
+                type="email"
+                name="Email"
+                maxLength={255}
+                value={formData.Email}
+                onChange={handleInputChange}
+              />
+              <label htmlFor="floatingInputEmail">Email address *</label>
+            </div>
+          </div>
+          <div className="col">
+            <div className="form-floating">
+              <select
+                className="form-select"
+                id="floatingServiceInterest"
+                aria-label="Service Interest"
+                name="Dropdown3"
+                value={formData.Dropdown3}
+                onChange={handleInputChange}
+              >
+                <option value="-Select-">-Select-</option>
+                <option value="Mutual Funds">Mutual Funds</option>
+                <option value="Fixed Deposit">Fixed Deposit</option>
+                <option value="Health Insurance">Health Insurance</option>
+                <option value="Stocks and Securities">
+                  Stocks and Securities
+                </option>
+                <option value="Life Insurance">Life Insurance</option>
+                <option value="Vehicle Insurance">Vehicle Insurance</option>
+                <option value="Travel Insurance">Travel Insurance</option>
+                <option value="Miscellaneous Insurance">
+                  Miscellaneous Insurance
+                </option>
+              </select>
+              <label htmlFor="floatingServiceInterest">Service Interest</label>
+            </div>
+          </div>
         </div>
 
         {/* old */}

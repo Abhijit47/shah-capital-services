@@ -135,8 +135,8 @@ const FooterOne: React.FC = () => {
                     <img
                       // src={'logo-landscape-2.png'}
                       src={'footer-logo.png'}
-                      width={'100px'}
-                      height={'100px'}
+                      width={'200px'}
+                      height={'200px'}
                       alt="Logo"
                     />
                   </Link>

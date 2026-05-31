@@ -91,7 +91,7 @@ function RouteComponent() {
               {blogs.map((blog) => (
                 <FadeInAdvanced
                   key={blog._meta.path}
-                  className="col-xl-4 col-lg-4"
+                  className="col-xl-4 col-lg-6 col-md-6"
                   variant={blog.animation as AnimationVariant}
                   delay={blog.animationDelay}
                 >
