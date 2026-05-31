@@ -43,7 +43,7 @@ import 'yet-another-react-lightbox/styles.css'
 
 import CustomCursor from '#/components/elements/CustomCursor'
 import FooterOne from '#/components/footers/FooterOne'
-import HeaderOne from '#/components/headers/HeaderOne'
+import Header from '#/components/headers/Header'
 import FixproLayout from '#/components/layout/FixproLayout'
 import NotFound from '#/components/not-found'
 
@@ -125,7 +125,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className={'smoothed'}>
-        <HeaderOne />
+        <Header />
         <FixproLayout>
           {/* <HeaderOne /> */}
           {children}
