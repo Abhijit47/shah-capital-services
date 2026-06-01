@@ -28,7 +28,7 @@ function RouteComponent() {
           <div className="container">
             <div className="card">
               <div className="card-body">
-                <h3 className="card-title fw-bold">Get A Free Quote</h3>
+                <h3 className="card-title fw-bold">Reach us</h3>
                 <hr />
                 <ZohoServiceForm />
               </div>

@@ -153,7 +153,7 @@ const MainSliderTwo: React.FC = () => {
                         </p>
                       </div>
                       <h2 className="main-slider-two__title text-center">
-                        Because <span>You</span> <br /> Better Things To Do!
+                        Because You <span>HAVE</span> <br /> better things to do
                       </h2>
                       <p className="main-slider-two__text text-center">
                         We have been operating for over a decade, providing
@@ -412,7 +412,7 @@ const MainSliderTwo: React.FC = () => {
         </div> */}
 
         <div
-          className={'position-absolute bottom-0 start-0'}
+          className={'position-absolute bottom-0 start-0 mb-2'}
           style={{ height: 'fit-content', width: '100%', zIndex: 4 }}
         >
           <MarqueeSlider mode="1" className="sliding-text__list">
@@ -433,7 +433,7 @@ const MainSliderTwo: React.FC = () => {
                       {/* <span className={service.iconClass}></span> */}
                     </div>
                     <h3 className="services-one__title fs-5">
-                      <Link to={'/services'}>
+                      <Link to={service.path}>
                         {service.title.split('\n').map((line, i, arr) => (
                           <Fragment key={i}>
                             {line}
@@ -443,7 +443,7 @@ const MainSliderTwo: React.FC = () => {
                       </Link>
                     </h3>
                     {/* <p className="services-one__single-text">{service.text}</p> */}
-                    <Link to={'/services'} className="services-one__read-more">
+                    <Link to={service.path} className="services-one__read-more">
                       Learn More<span className="icon-arrow-right"></span>
                     </Link>
                   </div>

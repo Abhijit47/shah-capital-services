@@ -224,7 +224,7 @@ const DetailsSecOne: React.FC = () => {
                   mindset — grounded in process, guided by conviction, and
                   anchored in a long-term perspective.
                 </p>
-                <div className="team-details__practice-area">
+                {/* <div className="team-details__practice-area">
                   <h4 className="team-details__practice-area-title">
                     Services We Provide
                   </h4>
@@ -253,7 +253,7 @@ const DetailsSecOne: React.FC = () => {
                       ))}
                     </ul>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
